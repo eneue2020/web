@@ -24,9 +24,12 @@ export default function Home() {
       </section>
       <section className="seccion">
         <div className="contenedor">
-          <Titulo titulo="Nuestros prestadores" bajada="Te atendés con los mejores profesionales" />
+          <Titulo titulo="Nuestros prestadores" bajada="Atendete en las instituciones de salud más reconocidas del país" />
         </div>
         <CarruselLogos />
+        <p style={{ textAlign: "center", marginTop: 24 }}>
+          <a href="#cartilla" className="btn btn-primario">Ver la cartilla completa</a>
+        </p>
       </section>
       <section className="seccion" style={{ paddingTop: 0 }}>
         <div className="contenedor">

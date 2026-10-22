@@ -68,14 +68,15 @@ export const DATA = {
         { nombre: "Emergencias", numero: "911" },
       ],
     },
-    // Instituciones vinculadas (Institucional y footer). Las que no tienen "url" no se muestran.
+    // Instituciones vinculadas (Institucional y footer). Sin "url" se muestra solo el logo, sin link
+    // (y no aparece en el footer); sin "url" ni "logo" no se muestra.
     // Logos tomados del sitio actual de OSMISS; para producción conviene servirlos desde /public.
     instituciones: [
       { nombre: "Superintendencia de Servicios de Salud", corto: "SSSalud", url: "https://www.argentina.gob.ar/sssalud", logo: "https://www.osmiss.org.ar/images/logo-sss.png" },
       { nombre: "Círculo de Ministros, Secretarios y Subsecretarios", corto: "Círculo de Ministros", url: "http://circulodeministros.com.ar/", logo: "https://www.osmiss.org.ar/images/logo-circulo.jpg" },
       { nombre: "Mutualidad del Círculo de Ministros", corto: "Mutualidad del Círculo", url: "https://www.mutualdelcirculodeministros.org.ar/", logo: "https://www.osmiss.org.ar/images/logo-mutual.jpg" },
-      { nombre: "Fipem", corto: "Fipem", url: "", logo: "" }, // completar URL y logo
-      { nombre: "Funsalud", corto: "Funsalud", url: "", logo: "" }, // completar URL y logo
+      { nombre: "Fipem", corto: "Fipem", url: "", logo: "https://www.osmiss.org.ar/images/logo-fipemcolor.png" }, // completar URL
+      { nombre: "Funsalud", corto: "Funsalud", url: "", logo: "https://www.osmiss.org.ar/images/logo-funsalud2.jpg" }, // completar URL
     ],
     // Superintendencia de Servicios de Salud (dato obligatorio para obras sociales).
     sssalud: {
@@ -221,16 +222,21 @@ export const DATA = {
     { icono: "🤝", titulo: "Cercanía", texto: "Un equipo que te acompaña y responde tus consultas." },
   ],
 
-  // Logos de prestadores para el carrusel horizontal del Home. "logo" = URL de imagen (opcional).
+  // Prestadores destacados para el carrusel horizontal del Home.
+  // "logo" = ruta de la imagen, por ej. "logos/prestadores/fleni.png" (archivo en public/logos/prestadores/).
+  // Sin logo se muestra el nombre. Usar logos provistos o autorizados por cada prestador.
   logos: [
-    { nombre: "Clínica San Martín", logo: "" },
-    { nombre: "Sanatorio Central", logo: "" },
-    { nombre: "Centro Odontológico Sur", logo: "" },
-    { nombre: "Laboratorio Andes", logo: "" },
-    { nombre: "Óptica Visión", logo: "" },
-    { nombre: "Kinesio Salud", logo: "" },
-    { nombre: "Diagnóstico Integral", logo: "" },
-    { nombre: "Farmacias del Pueblo", logo: "" },
+    { nombre: "IMAC", logo: "" },
+    { nombre: "Centro Médico Monserrat", logo: "" },
+    { nombre: "Sanatorio del Oeste", logo: "" },
+    { nombre: "San Camilo", logo: "" },
+    { nombre: "Anchorena", logo: "" },
+    { nombre: "Bazterrica", logo: "" },
+    { nombre: "FLENI", logo: "" },
+    { nombre: "Favaloro", logo: "" },
+    { nombre: "Arauz", logo: "" },
+    { nombre: "GEDYT", logo: "" },
+    { nombre: "Sanatorio Modelo Caseros", logo: "" },
   ],
 
   // Noticias / Novedades: listado y ficha individual.

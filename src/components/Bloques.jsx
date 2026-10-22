@@ -60,17 +60,22 @@ export function AccesosRapidos() {
   );
 }
 
-// Logos con link a las instituciones vinculadas (solo las que tienen URL cargada).
+// Logos de las instituciones vinculadas; con link solo las que tienen URL cargada.
 export function Instituciones() {
-  const lista = DATA.config.instituciones.filter((i) => i.url);
+  const lista = DATA.config.instituciones.filter((i) => i.url || i.logo);
   return (
     <div className="instituciones">
-      {lista.map((i) => (
-        <a key={i.nombre} href={i.url} target="_blank" rel="noopener" className="institucion" title={i.nombre}>
-          {i.logo ? <img src={i.logo} alt={i.nombre} loading="lazy" /> : <span>{i.corto}</span>}
-          <small>{i.corto}</small>
-        </a>
-      ))}
+      {lista.map((i) => {
+        const contenido = (
+          <>
+            {i.logo ? <img src={i.logo} alt={i.nombre} loading="lazy" /> : <span>{i.corto}</span>}
+            <small>{i.corto}</small>
+          </>
+        );
+        return i.url
+          ? <a key={i.nombre} href={i.url} target="_blank" rel="noopener" className="institucion" title={i.nombre}>{contenido}</a>
+          : <div key={i.nombre} className="institucion" title={i.nombre}>{contenido}</div>;
+      })}
     </div>
   );
 }

@@ -20,6 +20,12 @@ npm run pdfs     # regenera los PDF de "Ver Detalle Completo" en public/pdf/ (re
 - `src/styles.css`: estilos.
 - `prototipo-cdn/`: versión anterior sin Node (React por CDN), solo como respaldo.
 
+## Logos de prestadores (carrusel del Home)
+
+Copiar cada logo (PNG o SVG, idealmente con fondo transparente) en `public/logos/prestadores/` y
+completar el campo `logo` del prestador en `src/data.js`, por ejemplo `logo: "logos/prestadores/fleni.png"`.
+Si un prestador no tiene logo, se muestra su nombre.
+
 ## Pendientes de configurar (`src/data.js` → `config`)
 
 - `cartillaUrl`: link a la cartilla oficial en bymovi.
