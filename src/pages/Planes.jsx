@@ -53,6 +53,9 @@ function PlanDetalle({ id }) {
                 </button>
               )}
               <a href={cartillaUrl} target="_blank" rel="noopener" className="btn btn-secundario">Ver cartilla</a>
+              {plan.detalleUrl && (
+                <a href={plan.detalleUrl} target="_blank" rel="noopener" className="btn btn-secundario">Ver Detalle Completo</a>
+              )}
             </div>
           </div>
         </div>
