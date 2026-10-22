@@ -34,7 +34,8 @@ a { color: inherit; }
   background: var(--blanco);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
 }
-.header .contenedor {
+.header .header-principal {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -281,6 +282,87 @@ td.col-destacada { background: #fff8e1; font-weight: 700; }
   background: var(--blanco);
 }
 
+/* ---------- Urgencias ---------- */
+:root { --rojo: #c62828; --rojo-oscuro: #8e0000; }
+
+/* Barra superior (escritorio y tablet) */
+.barra-urgencias { background: var(--rojo); color: var(--blanco); font-size: 0.92rem; }
+.barra-urgencias .contenedor { display: flex; align-items: center; justify-content: center; gap: 8px 22px; flex-wrap: wrap; min-height: 38px; padding-top: 4px; padding-bottom: 4px; }
+.barra-urgencias-titulo { font-weight: 700; }
+.barra-urgencias-numeros { display: flex; gap: 18px; flex-wrap: wrap; }
+.barra-urgencias a { color: var(--blanco); text-decoration: none; }
+.barra-urgencias-numeros a { font-weight: 800; font-size: 1.05rem; letter-spacing: 0.3px; }
+.barra-urgencias-numeros a:hover, .barra-urgencias-mas:hover { text-decoration: underline; }
+.barra-urgencias-mas { opacity: 0.9; text-decoration: underline !important; text-underline-offset: 3px; }
+
+/* Ítem del menú */
+.nav a.nav-urgente { color: var(--rojo); }
+.nav a.nav-urgente:hover { background: #fdecea; color: var(--rojo-oscuro); }
+.nav a.nav-urgente.activo { background: var(--rojo); color: var(--blanco); }
+
+/* Botón flotante: solo en celular, donde la barra superior se oculta */
+.boton-urgencias { display: none; }
+@media (max-width: 768px) {
+  .barra-urgencias { display: none; }
+  .boton-urgencias { display: block; position: fixed; right: 16px; bottom: 16px; z-index: 60; }
+  .boton-urgencias-disparador {
+    display: flex; align-items: center; gap: 8px;
+    padding: 14px 20px; border: 0; border-radius: 999px;
+    background: var(--rojo); color: var(--blanco);
+    font: inherit; font-weight: 800; font-size: 1rem; cursor: pointer;
+    box-shadow: 0 8px 24px rgba(198, 40, 40, 0.45);
+    margin-left: auto;
+  }
+  .boton-urgencias:not(.abierto) .boton-urgencias-disparador { animation: latido 2.4s ease-in-out infinite; }
+  .boton-urgencias-panel {
+    display: grid; gap: 10px; width: min(300px, calc(100vw - 32px));
+    margin-bottom: 12px; padding: 18px; border-radius: var(--radio);
+    background: var(--blanco); box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+    border-top: 5px solid var(--rojo);
+  }
+  .boton-urgencias-panel strong { color: var(--rojo); font-size: 1.1rem; }
+  .boton-urgencias-panel small { color: var(--texto-suave); margin-top: -6px; }
+  .boton-urgencias-mas { text-align: center; color: var(--azul-medio); font-weight: 600; font-size: 0.9rem; }
+  /* Que el botón no tape el final del footer */
+  .footer { padding-bottom: 72px; }
+}
+@keyframes latido { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } }
+@media (prefers-reduced-motion: reduce) { .boton-urgencias-disparador { animation: none !important; } }
+
+.btn-urgencia { background: var(--rojo); color: var(--blanco); text-align: center; font-size: 1.05rem; padding: 14px 18px; }
+.btn-urgencia:hover { background: var(--rojo-oscuro); }
+
+/* Página Urgencias */
+.urgencias-hero { background: linear-gradient(130deg, var(--rojo-oscuro) 0%, var(--rojo) 60%, #e53935 100%); color: var(--blanco); padding: 48px 0 56px; }
+.urgencias-hero h1 { font-size: 2.6rem; margin: 12px 0 8px; line-height: 1.15; }
+.urgencias-hero p { font-size: 1.15rem; margin: 0 0 28px; max-width: 640px; }
+.urgencias-numeros { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; max-width: 760px; }
+.urgencias-numero {
+  display: grid; gap: 4px; padding: 20px 24px; border-radius: var(--radio);
+  background: var(--blanco); color: var(--rojo); text-decoration: none;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25); transition: transform 0.15s;
+}
+.urgencias-numero:hover { transform: translateY(-3px); }
+.urgencias-numero span { font-size: 0.9rem; font-weight: 700; color: var(--texto-suave); }
+.urgencias-numero strong { font-size: 2.2rem; letter-spacing: 0.5px; line-height: 1.1; }
+@media (max-width: 600px) {
+  .urgencias-hero { padding: 32px 0 40px; }
+  .urgencias-hero h1 { font-size: 2rem; }
+  .urgencias-numeros { grid-template-columns: 1fr; }
+  .urgencias-numero strong { font-size: 1.9rem; }
+}
+.urgencias-info { display: grid; gap: 24px; grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 900px) { .urgencias-info { grid-template-columns: 1fr; } }
+.urgencias-publicos { display: flex; gap: 12px; flex-wrap: wrap; }
+.urgencias-publicos a {
+  flex: 1; min-width: 120px; display: grid; text-align: center; padding: 12px;
+  border: 2px solid var(--rojo); border-radius: 12px; text-decoration: none; color: var(--rojo);
+}
+.urgencias-publicos strong { font-size: 1.8rem; line-height: 1.1; }
+.urgencias-publicos span { font-size: 0.82rem; color: var(--texto-suave); font-weight: 600; }
+.footer-urgencias { color: var(--blanco); font-weight: 700; }
+.footer-urgencias a { color: #ffcdd2; }
+
 /* ---------- Institucional: Dirección ---------- */
 .direccion { display: grid; grid-template-columns: 280px 1fr; gap: 24px; align-items: start; }
 @media (max-width: 800px) { .direccion { grid-template-columns: 1fr; } }
@@ -502,7 +584,7 @@ td.col-destacada { background: #fff8e1; font-weight: 700; }
 .sssalud .legal { margin-top: 10px; font-size: 0.9rem; }
 
 /* ---------- Cuadro de beneficios ---------- */
-.cuadro-contenedor { margin-top: 32px; scroll-margin-top: 84px; }
+.cuadro-contenedor { margin-top: 32px; scroll-margin-top: 120px; }
 .cuadro { background: var(--blanco); border-radius: var(--radio); box-shadow: var(--sombra); padding: 28px; }
 .cuadro-cabecera { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
 .cuadro-cabecera h2 { margin: 0 0 4px; color: var(--azul); }

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { DATA } from "../data.js";
+import { BarraUrgencias } from "./Urgencias.jsx";
 
 // Menú horizontal superior
 export default function Header({ pagina }) {
@@ -7,14 +8,19 @@ export default function Header({ pagina }) {
   const cerrar = () => setAbierto(false);
   return (
     <header className="header">
-      <div className="contenedor">
+      <BarraUrgencias />
+      <div className="contenedor header-principal">
         <a href="#home" className="logo">OSMISS<span>.</span></a>
         <button className="btn-menu" aria-label="Abrir menú" onClick={() => setAbierto(!abierto)}>☰</button>
         <nav className={"nav" + (abierto ? " abierto" : "")}>
           <ul>
             {DATA.menu.map((item) => (
               <li key={item.id}>
-                <a href={"#" + item.id} className={pagina === item.id ? "activo" : ""} onClick={cerrar}>
+                <a
+                  href={"#" + item.id}
+                  className={(pagina === item.id ? "activo" : "") + (item.urgente ? " nav-urgente" : "")}
+                  onClick={cerrar}
+                >
                   {item.label}
                 </a>
               </li>

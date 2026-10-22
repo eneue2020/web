@@ -14,11 +14,14 @@ import FAQ from "./pages/FAQ.jsx";
 import Tramites from "./pages/Tramites.jsx";
 import Contactos from "./pages/Contactos.jsx";
 import Afiliarme from "./pages/Afiliarme.jsx";
+import Urgencias from "./pages/Urgencias.jsx";
+import { BotonUrgencias } from "./components/Urgencias.jsx";
 
 const PAGINAS = {
   home: Home, planes: Planes, cartilla: Cartilla, novedades: Novedades,
   prevencion: Prevencion, institucional: Institucional, faq: FAQ,
   tramites: Tramites, contactos: Contactos, afiliarme: Afiliarme,
+  urgencias: Urgencias,
 };
 
 export default function App() {
@@ -35,6 +38,7 @@ export default function App() {
       <Header pagina={pagina} />
       <main><Componente detalle={detalle} /></main>
       <Footer />
+      {pagina !== "urgencias" && <BotonUrgencias />}
     </>
   );
 }

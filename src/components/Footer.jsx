@@ -23,6 +23,12 @@ export default function Footer() {
         </div>
         <div>
           <strong>Contacto</strong>
+          <p className="footer-urgencias">
+            🚑 Urgencias 24 hs:{" "}
+            {CFG.urgencias.telefonos.map((t, i) => (
+              <span key={t.tel}>{i > 0 && " · "}<a href={"tel:" + t.tel}>{t.numero}</a></span>
+            ))}
+          </p>
           <p>
             📞 <a href={"tel:" + CFG.telefonoTel}>{CFG.telefono}</a><br />
             Interior (gratis): <a href={"tel:" + CFG.telefonoInteriorTel}>{CFG.telefonoInterior}</a><br />

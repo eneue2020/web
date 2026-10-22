@@ -38,6 +38,28 @@ export const DATA = {
       { area: "Control de aportes", email: "control.aportes@osmiss.org.ar", texto: "Consultas sobre aportes y situación de empadronamiento." },
       { area: "Gerencia médica", email: "gerencia.medica@osmiss.org.ar", texto: "Consultas médicas y de prestaciones." },
     ],
+    // Urgencias y emergencias. Fuente: https://www.osmiss.org.ar/cobertura-plan200.html
+    // Se muestran en la barra superior, el botón flotante (celular), la sección Urgencias y el footer.
+    urgencias: {
+      prestador: "VITTAL",
+      nombre: "Centro Coordinador de Urgencias",
+      horario: "24 hs, los 365 días del año",
+      telefonos: [
+        { numero: "0810-333-8888", tel: "08103338888" },
+        { numero: "(011) 4000-8888", tel: "+541140008888" },
+      ],
+      servicios: [
+        { icono: "🚑", titulo: "Emergencias médicas", texto: "Situaciones con riesgo de vida que requieren atención inmediata." },
+        { icono: "⚕️", titulo: "Urgencias médicas", texto: "Atención rápida ante un problema de salud que no puede esperar." },
+        { icono: "🏠", titulo: "Médico a domicilio", texto: "Consulta médica en tu casa cuando no podés trasladarte." },
+        { icono: "💻", titulo: "Telemedicina", texto: "Consulta con un médico a distancia, desde tu celular o computadora." },
+      ],
+      // Números públicos nacionales, por si no se puede comunicar con el centro coordinador.
+      publicos: [
+        { nombre: "SAME (Ciudad de Buenos Aires)", numero: "107" },
+        { nombre: "Emergencias", numero: "911" },
+      ],
+    },
     // Instituciones vinculadas (Institucional y footer). Las que no tienen "url" no se muestran.
     // Logos tomados del sitio actual de OSMISS; para producción conviene servirlos desde /public.
     instituciones: [
@@ -68,6 +90,7 @@ export const DATA = {
     { id: "faq", label: "FAQ" },
     { id: "tramites", label: "Trámites" },
     { id: "contactos", label: "Contactos" },
+    { id: "urgencias", label: "Urgencias", urgente: true },
   ],
 
   // Carrusel principal: título, bajada, CTA, destino, orden y estado (activo).
@@ -337,6 +360,16 @@ export const DATA = {
     {
       categoria: "Atención y cobertura",
       preguntas: [
+        {
+          p: "¿Qué hago ante una urgencia o emergencia?",
+          r: [
+            "Llamá al Centro Coordinador de Urgencias (VITTAL), que atiende las 24 hs, los 365 días del año:",
+            "- 0810-333-8888",
+            "- (011) 4000-8888",
+            "Cubre emergencias y urgencias médicas, médico a domicilio y telemedicina. Tené a mano tu credencial y tu DNI.",
+          ],
+          cta: { texto: "Ver urgencias", destino: "urgencias" },
+        },
         {
           p: "¿Tengo cobertura en todo el país?",
           r: [
