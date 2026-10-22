@@ -3,8 +3,11 @@ import { Pagina } from "../components/Layout.jsx";
 import { Formulario, Campo } from "../components/Formulario.jsx";
 
 // Formulario Contacto / Sugerencias / Reclamos: tipo, nombre, apellido, email, teléfono y mensaje.
-export default function Contactos() {
+export default function Contactos({ detalle }) {
   const CFG = DATA.config;
+  const sectores = DATA.tramites.sectores;
+  // #contactos/<id> preselecciona el área (viene desde Trámites).
+  const area = sectores.find((s) => s.id === detalle);
   return (
     <>
       <Pagina titulo="Contactos" bajada="Estamos para ayudarte. Elegí el canal que te quede más cómodo y te respondemos a la brevedad.">
@@ -52,6 +55,13 @@ export default function Contactos() {
                   <option>Reclamo</option>
                 </select>
               </label>
+              <label className="campo">
+                <span>Área</span>
+                <select name="area" defaultValue={area ? area.nombre : ""} key={detalle || "general"}>
+                  <option value="">No estoy seguro/a</option>
+                  {sectores.map((s) => <option key={s.id}>{s.nombre}</option>)}
+                </select>
+              </label>
               <div className="fila">
                 <Campo label="Nombre" name="nombre" required />
                 <Campo label="Apellido" name="apellido" required />
@@ -60,7 +70,7 @@ export default function Contactos() {
                 <Campo label="Email" name="email" type="email" required />
                 <Campo label="Teléfono" name="telefono" type="tel" required />
               </div>
-              <Campo label="DNI o CUIL" name="dni" inputMode="numeric" />
+              <Campo label="DNI, CUIL o CUIT" name="dni" inputMode="numeric" />
               <Campo label="Mensaje" name="mensaje" type="textarea" required />
               <p className="ayuda">
                 Para ayudarte más rápido, contanos brevemente tu consulta e incluí tu DNI o CUIL y un teléfono de contacto.

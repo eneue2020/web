@@ -9,7 +9,7 @@ export const DATA = {
   config: {
     // App OSMISS en bymovi, donde está publicada la cartilla.
     cartillaUrl: "https://osmiss-app.bymovi.com/inicio",
-    appUrl: "https://osmiss-app.bymovi.com/inicio",
+    appUrl: "https://osmiss-app.bymovi.com/",
     telefono: "(011) 4334-6611",
     telefonoTel: "+541143346611",
     telefonoInterior: "0800-345-OSMISS (6764)",
@@ -360,12 +360,59 @@ export const DATA = {
     },
   ],
 
-  tramites: [
-    { titulo: "Afiliación", texto: "Alta de titular y grupo familiar.", destino: "afiliarme" },
-    { titulo: "Cambio de plan", texto: "Solicitá pasar a otro plan.", destino: "contactos" },
-    { titulo: "Reclamos", texto: "Contanos tu inconveniente para resolverlo.", destino: "contactos" },
-    { titulo: "Sugerencias", texto: "Ayudanos a mejorar nuestro servicio.", destino: "contactos" },
-    { titulo: "Credencial", texto: "Reimpresión o credencial digital.", destino: "contactos" },
-    { titulo: "Cartilla", texto: "Encontrá prestadores cerca tuyo.", destino: "cartilla" },
-  ],
+  // Trámites a distancia. Fuente: https://www.osmiss.org.ar/tramitesadistancia.html
+  tramites: {
+    app: {
+      titulo: "App OSMISS (osmiss-bymovi)",
+      bajada: "Tu obra social en el celular: resolvé la mayoría de tus trámites en minutos, cuando quieras y desde donde estés.",
+      aclaracion: "Disponible para afiliados activos a los planes OSMISS-100, OSMISS-150 y OSMISS-200.",
+      webUrl: "https://osmiss-app.bymovi.com/",
+      androidUrl: "https://play.google.com/store/apps/details?id=com.webexport.osmiss",
+      masInfoUrl: "https://osmiss.org.ar/news2/2026/05/22/nueva-app-osmiss-bymovi/",
+      funciones: [
+        { icono: "💳", texto: "Credencial digital tuya y de tu grupo familiar" },
+        { icono: "✅", texto: "Pedidos de autorización" },
+        { icono: "🩺", texto: "Cartilla de prestadores actualizada" },
+        { icono: "📄", texto: "Trámites administrativos" },
+        { icono: "🚑", texto: "Emergencias y contactos" },
+        { icono: "🔔", texto: "Mensajes y notificaciones" },
+      ],
+    },
+    // "id" se usa para preseleccionar el área en el formulario de Contactos (#contactos/<id>).
+    sectores: [
+      {
+        id: "afiliaciones",
+        nombre: "Afiliaciones",
+        icono: "👨‍👩‍👧",
+        para: "Afiliados y empleadores",
+        email: "afiliaciones@osmiss.org.ar",
+        tramites: ["Alta de afiliados", "Baja", "Cambio de prestación", "Cambio de datos personales", "Control de aportes", "Credencial"],
+      },
+      {
+        id: "gerencia-medica",
+        nombre: "Gerencia Médica",
+        icono: "🩺",
+        para: "Afiliados y efectores",
+        email: "gerencia.medica@osmiss.org.ar",
+        tramites: ["Autorizar una orden o una receta", "Consultar la cartilla", "Consultar dónde atenderte", "Consultar coseguros"],
+      },
+      {
+        id: "control-aportes",
+        nombre: "Control de Aportes",
+        icono: "📊",
+        para: "Afiliados y empleadores",
+        email: "control.aportes@osmiss.org.ar",
+        tramites: ["Verificar empleados", "Verificar aportes", "Verificar y saldar deudas"],
+      },
+      {
+        id: "info",
+        nombre: "Otras consultas",
+        icono: "💬",
+        para: "Público en general",
+        email: "info@osmiss.org.ar",
+        tramites: ["Información general", "Consultas sobre planes y cobertura", "Sugerencias y reclamos"],
+      },
+    ],
+    ayuda: "Para resolver tu trámite más rápido, contanos brevemente tu consulta e incluí tu CUIL/CUIT, nombre y apellido (o el nombre de la institución) y un teléfono de contacto.",
+  },
 };
