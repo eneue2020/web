@@ -49,6 +49,11 @@ OSMISS (sitio público)
 > En el prototipo las rutas usan hash (`#planes/osmiss-100`). En producción deben ser **URLs amigables**
 > (`/planes/osmiss-100`) por SEO, como indica la propuesta (metadata, sitemap y Open Graph por página).
 
+![Diagrama de navegación del sitio](docs/mapa-del-sitio.png)
+
+Versiones de la imagen (fondo transparente): [PNG](docs/mapa-del-sitio.png) · [SVG](docs/mapa-del-sitio.svg).
+Código fuente del diagrama (Mermaid):
+
 ```mermaid
 flowchart TD
     H[Home] --> P[Planes]
