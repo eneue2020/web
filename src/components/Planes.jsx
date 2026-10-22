@@ -12,7 +12,7 @@ export function PlanCard({ plan }) {
       <a href={"#planes/" + plan.id} className={"btn " + (plan.destacado ? "btn-destacado" : "btn-primario")}>
         Ver cobertura
       </a>
-      <a href={DATA.config.appUrl} target="_blank" rel="noopener" className="link-cartilla">Ver cartilla →</a>
+      <a href={DATA.config.cartillaUrl} target="_blank" rel="noopener" className="link-cartilla">Ver cartilla →</a>
     </article>
   );
 }

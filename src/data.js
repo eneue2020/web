@@ -9,7 +9,7 @@ export const DATA = {
   config: {
     // App de afiliados OSMISS en bymovi, donde está publicada la cartilla.
     appUrl: "https://osmiss-app.bymovi.com/",
-    cartillaUrl: "https://osmiss-app.bymovi.com/",
+    cartillaUrl: "https://osmiss-app.bymovi.com/cartilla",
     telefono: "(011) 4334-6611",
     telefonoTel: "+541143346611",
     telefonoInterior: "0800-345-OSMISS (6764)",
