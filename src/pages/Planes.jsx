@@ -1,5 +1,8 @@
+import { useEffect, useRef, useState } from "react";
 import { DATA } from "../data.js";
+import { BENEFICIOS } from "../beneficios.js";
 import { Pagina, Titulo, NoEncontrado } from "../components/Layout.jsx";
+import CuadroBeneficios from "../components/CuadroBeneficios.jsx";
 import { GrillaPlanes } from "../components/Planes.jsx";
 import { CtaAfiliarme } from "../components/Bloques.jsx";
 
@@ -13,9 +16,17 @@ const COMPARATIVA = [
 ];
 
 function PlanDetalle({ id }) {
+  const [verBeneficios, setVerBeneficios] = useState(false);
+  const cuadroRef = useRef(null);
+  useEffect(() => {
+    if (verBeneficios) cuadroRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [verBeneficios]);
+  useEffect(() => setVerBeneficios(false), [id]);
+
   const plan = DATA.planes.find((p) => p.id === id);
   if (!plan) return <NoEncontrado />;
   const cartillaUrl = DATA.config.appUrl; // la cartilla se consulta en la app de afiliados
+  const cuadro = BENEFICIOS[plan.id];
   return (
     <section className="seccion">
       <div className="contenedor">
@@ -31,10 +42,28 @@ function PlanDetalle({ id }) {
             <p>{plan.descripcion}</p>
             <div className="acciones">
               <a href={"#afiliarme/" + plan.id} className="btn btn-destacado">Quiero afiliarme</a>
+              {cuadro && (
+                <button
+                  className="btn btn-primario"
+                  onClick={() => (verBeneficios ? cuadroRef.current?.scrollIntoView({ behavior: "smooth" }) : setVerBeneficios(true))}
+                  aria-expanded={verBeneficios}
+                >
+                  Beneficios
+                </button>
+              )}
               <a href={cartillaUrl} target="_blank" rel="noopener" className="btn btn-secundario">Ver cartilla</a>
             </div>
           </div>
         </div>
+        {cuadro && verBeneficios && (
+          <div ref={cuadroRef} className="cuadro-contenedor">
+            <CuadroBeneficios plan={plan} cuadro={cuadro} />
+            <div className="cuadro-cta">
+              <p><strong>¿Te convence el {plan.nombre}?</strong> Sumate hoy y empezá a disfrutar de tu cobertura.</p>
+              <a href={"#afiliarme/" + plan.id} className="btn btn-destacado">Quiero afiliarme</a>
+            </div>
+          </div>
+        )}
         <div className="grilla" style={{ marginTop: 32 }}>
           <div className="tarjeta">
             <h3>Características</h3>
