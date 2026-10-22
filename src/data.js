@@ -47,8 +47,9 @@ export const DATA = {
     },
     credencialUrl: "https://osmiss-app.bymovi.com/credencial-digital",
     // Trabajá con nosotros (#trabaja-con-nosotros): recepción de CV. El formulario se envía con
-    // formulario: "cv" y el archivo adjunto en el campo "cv" (multipart). Definir quién los recibe.
+    // formulario: "cv", destinatario (email) y el archivo adjunto en el campo "cv" (multipart).
     rrhh: {
+      email: "info@osmiss.org.ar", // destino PROVISORIO de los CV: OSMISS va a definir un email específico
       maxMb: 5,
       areas: ["Atención al afiliado", "Administración", "Afiliaciones", "Auditoría médica", "Sistemas", "Otra"],
       motivos: [

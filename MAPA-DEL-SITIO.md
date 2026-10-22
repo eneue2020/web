@@ -86,7 +86,7 @@ flowchart TD
     A --> Z
     H -->|Footer e Institucional| TR[Trabajá con nosotros]
     TR --> CV[Formulario de CV con adjunto]
-    CV --> RH[(RRHH: destino a definir)]
+    CV --> RH[(Email: info@osmiss.org.ar - provisorio)]
 ```
 
 > Todos los formularios terminan en **Zoho CRM** (y se guardan en el Backoffice). El campo **Tipo** del
@@ -226,9 +226,12 @@ Deben guardarse también en el Backoffice, según la propuesta.
 | **Contacto / Sugerencias / Reclamos** | /contactos | Tipo* (Quiero afiliarme / Consulta / Sugerencia / Reclamo), Área (Afiliaciones / Gerencia Médica / Control de Aportes / Otras consultas), Nombre*, Apellido*, Email*, Teléfono*, DNI/CUIL/CUIT, Mensaje* |
 | **Envío de CV** | /trabaja-con-nosotros | Nombre*, Apellido*, Email*, Teléfono*, Área de interés*, CV* (PDF/DOC/DOCX, máx. 5 MB), Mensaje, Consentimiento* para guardar los datos |
 
-> El formulario de CV se envía como `multipart/form-data` (por el archivo adjunto) con `formulario: "cv"`.
-> **No forma parte de la integración con Zoho de la propuesta**: definir el destino (casilla de RRHH,
-> almacenamiento en el Backoffice o Zoho Recruit) y el tratamiento de datos personales (Ley 25.326).
+> El formulario de CV se envía como `multipart/form-data` (por el archivo adjunto) con `formulario: "cv"`
+> y `destinatario: "info@osmiss.org.ar"`. **Los CV deben llegar a info@osmiss.org.ar** (con el archivo adjunto).
+> **Destino provisorio:** OSMISS va a definir un email específico para RRHH; tomarlo de configuración, no fijo en el código.
+> **No forma parte de la integración con Zoho de la propuesta**: el backend debe reenviar cada CV por email
+> a esa casilla (y opcionalmente guardarlo en el Backoffice), respetando la Ley 25.326 de datos personales.
+> En la página también se ofrece enviarlo directamente a esa dirección (link mailto).
 
 **Envío a Zoho CRM** — cada envío es un JSON con todos los campos del formulario más `formulario`,
 que indica de dónde viene. En Contactos, el campo `tipo` indica la categoría elegida y `area`, el sector:
@@ -324,6 +327,6 @@ y las descripciones completas en `src/descripciones.js`. Los PDF se generan con 
 
 **Integraciones**
 - **Zoho CRM**: endpoint de la API para los formularios.
-- **CV (Trabajá con nosotros)**: definir quién recibe los CV y dónde se guardan; áreas de interés del formulario.
+- **CV (Trabajá con nosotros)**: reenvío por email desde el backend, por ahora a info@osmiss.org.ar (**provisorio**, OSMISS definirá un email específico); validar las áreas de interés del formulario.
 - **bymovi**: la cartilla se embebe por recorte visual (depende de su diseño). Recomendado: pedir a bymovi un modo "embebido" oficial sin menú.
 - **GA4**, sitemap, Open Graph por página y URLs amigables (propuesta, punto 07).

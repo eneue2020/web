@@ -50,6 +50,7 @@ export default function TrabajaConNosotros() {
               textoBoton="Enviar mi CV"
               mensajeOk="¡Gracias por tu interés en sumarte a OSMISS! Recibimos tu CV y nos vamos a contactar si tu perfil se ajusta a alguna búsqueda."
             >
+              <input type="hidden" name="destinatario" value={RRHH.email} />
               <div className="fila">
                 <Campo label="Nombre" name="nombre" required />
                 <Campo label="Apellido" name="apellido" required />
@@ -83,6 +84,13 @@ export default function TrabajaConNosotros() {
               </label>
             </Formulario>
           </div>
+          <p className="cartilla-pie">
+            ¿Preferís enviarlo por email? Escribinos a{" "}
+            <a href={"mailto:" + RRHH.email + "?subject=" + encodeURIComponent("CV - Trabajá con nosotros")}>
+              <strong>{RRHH.email}</strong>
+            </a>{" "}
+            con el asunto “CV - Trabajá con nosotros”.
+          </p>
         </div>
       </section>
     </>
