@@ -8,11 +8,12 @@ export const DATA = {
   config: {
     // Link a la cartilla de OSMISS publicada en bymovi (completar con la URL real).
     cartillaUrl: "#",
-    telefono: "0800-000-0000",
-    guardia: "0800-000-0001",
-    email: "contacto@osmiss.org.ar",
-    direccion: "Dirección de la sede central",
-    horario: "Lunes a viernes de 8 a 18 hs",
+    telefono: "(011) 4334-6611",
+    telefonoInterior: "0800-345-6764",
+    guardia: "0800-000-0001", // ejemplo: completar con el número real
+    email: "info@osmiss.org.ar",
+    direccion: "Paraguay 661, 2° piso, CABA",
+    horario: "Lunes a viernes de 9 a 17 hs",
     // Endpoint de la API que reenvía los formularios a Zoho CRM. Vacío = modo demo (no envía).
     formulariosApi: "",
   },
@@ -217,26 +218,119 @@ export const DATA = {
   },
 
   // Preguntas frecuentes organizadas por categorías.
+  // Datos tomados de https://www.osmiss.org.ar/preguntas.html, con redacción orientada a captar afiliados.
+  // "r" puede ser un texto o una lista de párrafos; los párrafos que empiezan con "- " se muestran como lista.
+  // "cta" (opcional) agrega un botón al final de la respuesta: { texto, destino }.
   faq: [
     {
-      categoria: "Afiliación",
+      categoria: "Sumate a OSMISS",
       preguntas: [
-        { p: "¿Cómo me afilio a OSMISS?", r: "Completá el formulario “Quiero afiliarme” y un asesor se va a comunicar con vos. También podés acercarte a nuestras sedes con tu DNI." },
-        { p: "¿Puedo sumar a mi grupo familiar?", r: "Sí, podés incluir a tu cónyuge e hijos. Indicalo en los comentarios del formulario de afiliación." },
+        {
+          p: "¿Cómo me paso a OSMISS?",
+          r: [
+            "¡Es más simple de lo que pensás! Si ya tenés una obra social, podés elegir OSMISS y hacer el cambio. Solo necesitás:",
+            "- DNI, LC, LE o CI",
+            "- Tu último recibo de sueldo",
+            "¿No sabés cuál es tu obra social actual? Consultalo sin costo en la Superintendencia de Servicios de Salud al 0800-222-72583.",
+            "Podés acercar la documentación a nuestra sede de Paraguay 661, 2° piso (Sector Afiliaciones). Avisanos antes de venir al (011) 4334-6611 y te esperamos. Si estás en el interior, llamanos y te indicamos dónde entregarla.",
+          ],
+          cta: { texto: "Quiero afiliarme", destino: "afiliarme" },
+        },
+        {
+          p: "¿Cómo sé si ya estoy afiliado?",
+          r: [
+            "Solo OSMISS Casa Central o la Superintendencia de Servicios de Salud (SSSalud) pueden confirmar tu afiliación, ya sea directa o derivada.",
+            "Si tenés dudas, el titular puede escribirnos a afiliaciones@osmiss.org.ar con su consulta, DNI, CUIL, nombre y apellido y un teléfono de contacto, o llamarnos al (011) 4334-6611. Te respondemos a la brevedad.",
+          ],
+        },
+        {
+          p: "¿Estar dado de alta es lo mismo que estar empadronado?",
+          r: [
+            "No, y es importante conocer la diferencia para empezar a usar tu cobertura:",
+            "- Dado de alta (activo): tu empleador ya realiza correctamente los aportes a la obra social.",
+            "- Empadronado: además de tener los aportes, completaste el trámite que te habilita a atenderte con los profesionales de OSMISS.",
+            "Completá los dos pasos y disfrutá de todos los beneficios de tu plan.",
+          ],
+        },
+        {
+          p: "¿Qué es el alta temprana?",
+          r: "Es la inscripción que realiza tu empleador ante ARCA (ex AFIP) para informar a los empleados por los que hará los aportes de cargas sociales. Es el primer paso para que tus aportes lleguen a OSMISS.",
+        },
+        {
+          p: "¿Qué significa ser beneficiario no activo?",
+          r: [
+            "Significa que, por tu situación de empadronamiento, por el momento no podés recibir prestaciones médicas. Suele deberse a:",
+            "- Opción por otra obra social",
+            "- Falta de aportes patronales",
+            "- Datos de la empresa sin actualizar en OSMISS",
+            "- Documentación pendiente de presentar",
+            "Tiene solución: acercate a nuestra sede y te ayudamos a regularizar tu situación.",
+          ],
+          cta: { texto: "Contactanos", destino: "contactos" },
+        },
+        {
+          p: "¿Dónde tramito mi credencial?",
+          r: "Llamanos al (011) 4334-6611 y pedí por el sector Afiliaciones, o acercate a nuestra sede. Te ayudamos a tenerla lo antes posible.",
+        },
       ],
     },
     {
-      categoria: "Planes",
+      categoria: "Atención y cobertura",
       preguntas: [
-        { p: "¿Cómo cambio de plan?", r: "Solicitalo desde Trámites o Contactos. El cambio se hace efectivo a partir del mes siguiente." },
-        { p: "¿Cuál es el plan más completo?", r: "El OSMISS-500 es nuestro plan superador, con la cobertura más amplia." },
+        {
+          p: "¿Tengo cobertura en todo el país?",
+          r: [
+            "Sí. Cuando viajes a otra parte del país fuera de tu localidad de atención, podés atenderte por guardia. Solo presentá:",
+            "- Tu credencial OSMISS (provisoria o definitiva)",
+            "- DNI o cédula de identidad",
+          ],
+        },
+        {
+          p: "¿Qué necesito para atenderme?",
+          r: [
+            "Para atenderte en centros ambulatorios y guardias, presentá siempre:",
+            "- Tu credencial OSMISS (provisoria o definitiva)",
+            "- DNI o cédula de identidad",
+          ],
+        },
+        {
+          p: "¿Qué es un prestador?",
+          r: "Son los profesionales, centros y lugares que te brindan atención médica como afiliado de OSMISS. Podés consultarlos en nuestra cartilla.",
+          cta: { texto: "Ver cartilla", destino: "cartilla" },
+        },
+        {
+          p: "¿Qué es un centro ambulatorio?",
+          r: "Es el lugar donde recibís atención médica de distintas especialidades, sin necesidad de internación.",
+        },
+        {
+          p: "¿Qué es una autorización y cuándo la necesito?",
+          r: "Es un trámite previo que se realiza cuando tu médico te indica una práctica o un estudio que lo requiere. No te preocupes: nuestro equipo de la sede te indica dónde y cómo hacerla.",
+        },
+        {
+          p: "¿Dónde queda la sede de OSMISS?",
+          r: "Te esperamos en Paraguay 661, 2° piso, Ciudad de Buenos Aires, de lunes a viernes de 9 a 17 hs. También podés llamarnos al (011) 4334-6611 o, desde el interior, sin cargo al 0800-345-6764.",
+        },
       ],
     },
     {
-      categoria: "Cartilla y atención",
+      categoria: "Medicamentos",
       preguntas: [
-        { p: "¿Dónde consulto los prestadores?", r: "En la sección Cartilla, donde también encontrás el acceso a la cartilla completa y actualizada." },
-        { p: "¿Qué hago ante una urgencia?", r: "Comunicate con la guardia 24 hs o dirigite al centro de guardia más cercano de la cartilla." },
+        {
+          p: "¿Qué es el vademécum?",
+          r: [
+            "Es el listado de medicamentos que OSMISS cubre para sus afiliados. Hay distintos vademécum según el plan, cada uno con su porcentaje de cobertura:",
+            "- PMI (Plan Materno Infantil)",
+            "- PPI (Plan Privilegio Infantil)",
+            "- Ambulatorio",
+          ],
+        },
+        {
+          p: "¿Qué son las monodrogas, principios activos o genéricos?",
+          r: [
+            "Son el componente del medicamento que actúa para curar una enfermedad o aliviar sus síntomas.",
+            "Un mismo genérico puede venderse con distintos nombres comerciales y a distintos precios, según la marca, la publicidad o el envase. Pero la droga es siempre la misma: elegir por genérico te permite cuidar tu salud y también tu bolsillo.",
+          ],
+        },
       ],
     },
   ],

@@ -11,6 +11,7 @@ export default function Contactos() {
         <div className="tarjeta">
           <h3>Canales de atención</h3>
           <p>📞 {CFG.telefono} ({CFG.horario})</p>
+          <p>📞 Interior del país (gratuito): {CFG.telefonoInterior}</p>
           <p>🚑 Guardia 24 hs: {CFG.guardia}</p>
           <p>✉️ {CFG.email}</p>
           <p>📍 {CFG.direccion}</p>

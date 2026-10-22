@@ -297,6 +297,10 @@ td.col-destacada { background: #fff8e1; font-weight: 700; }
   color: var(--azul);
 }
 .faq-item .respuesta { padding: 0 20px 18px; color: var(--texto-suave); }
+.faq-item .respuesta p { margin: 0 0 10px; }
+.faq-item .respuesta .lista-check { margin: 0 0 10px; }
+.faq-item .respuesta .btn { margin-top: 6px; }
+.faq-item.abierto { box-shadow: 0 0 0 2px var(--azul-medio), var(--sombra); }
 
 /* ---------- Formulario ---------- */
 .form { display: grid; gap: 14px; }
