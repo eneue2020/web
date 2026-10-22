@@ -10,9 +10,9 @@ export function PlanCard({ plan }) {
         {plan.caracteristicas.map((p) => <li key={p}>{p}</li>)}
       </ul>
       <a href={"#planes/" + plan.id} className={"btn " + (plan.destacado ? "btn-destacado" : "btn-primario")}>
-        Ver detalle
+        Ver cobertura
       </a>
-      <a href={DATA.config.cartillaUrl} target="_blank" rel="noopener" className="link-cartilla">Ver cartilla →</a>
+      <a href={DATA.config.appUrl} target="_blank" rel="noopener" className="link-cartilla">Ver cartilla →</a>
     </article>
   );
 }

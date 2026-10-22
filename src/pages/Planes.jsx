@@ -15,7 +15,7 @@ const COMPARATIVA = [
 function PlanDetalle({ id }) {
   const plan = DATA.planes.find((p) => p.id === id);
   if (!plan) return <NoEncontrado />;
-  const cartillaUrl = DATA.config.cartillaUrl;
+  const cartillaUrl = DATA.config.appUrl; // la cartilla se consulta en la app de afiliados
   return (
     <section className="seccion">
       <div className="contenedor">
