@@ -1,0 +1,9 @@
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+
+export default defineConfig({
+  plugins: [react()],
+  // Rutas relativas: el build (carpeta dist) funciona en cualquier subcarpeta del servidor.
+  base: "./",
+  server: { port: 5173 },
+});
