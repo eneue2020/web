@@ -10,6 +10,14 @@ export const DATA = {
     // App de afiliados OSMISS en bymovi, donde está publicada la cartilla.
     appUrl: "https://osmiss-app.bymovi.com/",
     cartillaUrl: "https://osmiss-app.bymovi.com/cartilla",
+    // Cartilla embebida en la sección Cartilla. Medidas de la app de bymovi (Ionic split-pane):
+    // el menú lateral mide 25% del ancho (entre 270 y 380 px) y aparece desde 992 px.
+    // Si bymovi cambia su diseño, ajustar acá esos valores y el alto de la barra superior.
+    cartillaEmbed: {
+      url: "https://osmiss-app.bymovi.com/cartilla",
+      menu: { porcentaje: 0.25, min: 270, max: 380, breakpoint: 992 },
+      altoEncabezado: 65,
+    },
     telefono: "(011) 4334-6611",
     telefonoTel: "+541143346611",
     telefonoInterior: "0800-345-OSMISS (6764)",
@@ -215,16 +223,6 @@ export const DATA = {
         "Consultá la cartilla actualizada para encontrar el más cercano a tu domicilio.",
       ],
     },
-  ],
-
-  // Muestra local de cartilla. La cartilla oficial se consulta en bymovi (config.cartillaUrl).
-  cartilla: [
-    { nombre: "Clínica San Martín", especialidad: "Clínica médica", localidad: "CABA" },
-    { nombre: "Centro Odontológico Sur", especialidad: "Odontología", localidad: "Lanús" },
-    { nombre: "Dra. Laura Gómez", especialidad: "Pediatría", localidad: "La Plata" },
-    { nombre: "Dr. Martín Pérez", especialidad: "Cardiología", localidad: "CABA" },
-    { nombre: "Óptica Visión", especialidad: "Óptica", localidad: "Quilmes" },
-    { nombre: "Kinesio Salud", especialidad: "Kinesiología", localidad: "Córdoba" },
   ],
 
   prevencion: [

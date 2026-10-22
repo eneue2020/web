@@ -281,6 +281,20 @@ td.col-destacada { background: #fff8e1; font-weight: 700; }
   background: var(--blanco);
 }
 
+/* ---------- Cartilla embebida ---------- */
+.cartilla-embed {
+  position: relative;
+  overflow: hidden;
+  height: min(80vh, 900px);
+  min-height: 560px;
+  background: var(--blanco);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+}
+.cartilla-embed iframe { position: absolute; border: 0; }
+.cartilla-pie { text-align: center; margin: 16px 0 0; color: var(--texto-suave); }
+.cartilla-pie a { color: var(--azul-medio); }
+
 /* ---------- FAQ ---------- */
 .faq-item { background: var(--blanco); border-radius: 10px; margin-bottom: 12px; box-shadow: var(--sombra); overflow: hidden; }
 .faq-item button {
