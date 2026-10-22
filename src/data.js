@@ -240,6 +240,32 @@ export const DATA = {
       { titulo: "Visión", texto: "Ser la obra social de referencia por la excelencia de sus servicios y la cercanía con sus afiliados." },
       { titulo: "Valores", texto: "Compromiso, transparencia, respeto y vocación de servicio." },
     ],
+    // Dirección. Fuente: https://www.osmiss.org.ar/osmiss.html#direccion
+    direccion: {
+      presidente: {
+        nombre: "Ing. Néstor E. Fernández",
+        cargo: "Presidente",
+        // Foto del sitio actual; para producción conviene servirla desde /public.
+        foto: "https://www.osmiss.org.ar/images/direccion001.gif",
+      },
+      marcoLegal: [
+        "Inscripta en el Registro Nacional de Obras Sociales bajo el Nº 0-0250-1, OSMISS es una entidad con jurisdicción en todo el territorio de la República Argentina, conforme a lo dispuesto por la Resolución de la Superintendencia de Servicios de Salud Nº 027/04, que la encuadra en los términos del Art. 1º Inc. h) de la Ley 23.660, e incluida en el Registro del Sistema Nacional Integrado de Salud en el marco de la Ley 23.661.",
+        "Tales disposiciones han sido validadas por la Superintendencia de Servicios de Salud por la Resolución Nº 309/05.",
+        "La conducción de OSMISS, determinada en el Registro Nacional de Obras Sociales y convalidada por el Certificado Nº 1976/04 RNOS, está integrada por:",
+      ],
+      autoridades: [
+        { cargo: "Presidente", nombre: "Ing. Néstor Eduardo FERNÁNDEZ" },
+        { cargo: "Vicepresidente", nombre: "Dr. Juan José BABODO" },
+        { cargo: "Tesorero", nombre: "Lic. Alberto Joaquín UGALDE" },
+        { cargo: "Secretario de Acción Social", nombre: "Dr. Ismael MATA" },
+        { cargo: "Secretaria de Actas", nombre: "Ing. Juan Carlos BASILE" },
+      ],
+      comisionRevisora: [
+        "Dr. Jorge Ricardo MACRI",
+        "Dr. Francisco Alejo Roberto DOMINGUEZ JOURNET",
+        "Dr. Domingo Olimpio RODRIGUEZ",
+      ],
+    },
   },
 
   // Preguntas frecuentes organizadas por categorías.
