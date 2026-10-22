@@ -30,6 +30,21 @@ export function CarruselLogos() {
   );
 }
 
+// Logos con link a las instituciones vinculadas (solo las que tienen URL cargada).
+export function Instituciones() {
+  const lista = DATA.config.instituciones.filter((i) => i.url);
+  return (
+    <div className="instituciones">
+      {lista.map((i) => (
+        <a key={i.nombre} href={i.url} target="_blank" rel="noopener" className="institucion" title={i.nombre}>
+          {i.logo ? <img src={i.logo} alt={i.nombre} loading="lazy" /> : <span>{i.corto}</span>}
+          <small>{i.corto}</small>
+        </a>
+      ))}
+    </div>
+  );
+}
+
 export function CtaAfiliarme() {
   return (
     <section className="cta-banda">

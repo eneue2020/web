@@ -38,6 +38,15 @@ export const DATA = {
       { area: "Control de aportes", email: "control.aportes@osmiss.org.ar", texto: "Consultas sobre aportes y situación de empadronamiento." },
       { area: "Gerencia médica", email: "gerencia.medica@osmiss.org.ar", texto: "Consultas médicas y de prestaciones." },
     ],
+    // Instituciones vinculadas (Institucional y footer). Las que no tienen "url" no se muestran.
+    // Logos tomados del sitio actual de OSMISS; para producción conviene servirlos desde /public.
+    instituciones: [
+      { nombre: "Superintendencia de Servicios de Salud", corto: "SSSalud", url: "https://www.argentina.gob.ar/sssalud", logo: "https://www.osmiss.org.ar/images/logo-sss.png" },
+      { nombre: "Círculo de Ministros, Secretarios y Subsecretarios", corto: "Círculo de Ministros", url: "http://circulodeministros.com.ar/", logo: "https://www.osmiss.org.ar/images/logo-circulo.jpg" },
+      { nombre: "Mutualidad del Círculo de Ministros", corto: "Mutualidad del Círculo", url: "https://www.mutualdelcirculodeministros.org.ar/", logo: "https://www.osmiss.org.ar/images/logo-mutual.jpg" },
+      { nombre: "Fipem", corto: "Fipem", url: "", logo: "" }, // completar URL y logo
+      { nombre: "Funsalud", corto: "Funsalud", url: "", logo: "" }, // completar URL y logo
+    ],
     // Superintendencia de Servicios de Salud (dato obligatorio para obras sociales).
     sssalud: {
       telefono: "0800-222-SALUD (72583)",

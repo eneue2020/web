@@ -33,6 +33,14 @@ export default function Footer() {
           <a href="#afiliarme" className="btn btn-destacado">Quiero afiliarme</a>
         </div>
       </div>
+      <div className="contenedor footer-instituciones">
+        <strong>Instituciones vinculadas</strong>
+        <ul>
+          {CFG.instituciones.filter((i) => i.url).map((i) => (
+            <li key={i.nombre}><a href={i.url} target="_blank" rel="noopener" title={i.nombre}>{i.corto}</a></li>
+          ))}
+        </ul>
+      </div>
       <div className="contenedor footer-legal">
         © {new Date().getFullYear()} OSMISS · Obra Social de Ministros, Secretarios y Subsecretarios · RNOS {CFG.rnos} · CUIT {CFG.cuit}
         <br />

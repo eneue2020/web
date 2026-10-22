@@ -583,4 +583,23 @@ td.col-destacada { background: #fff8e1; font-weight: 700; }
 .footer a { text-decoration: none; }
 .footer a:hover { color: var(--blanco); }
 .logo-footer { color: var(--blanco); }
+.footer-instituciones { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; margin-top: 28px; }
+.footer-instituciones strong { margin: 0; }
+.footer-instituciones ul { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+.footer-instituciones li { margin: 0; }
+.footer-instituciones a { text-decoration: underline; text-underline-offset: 3px; }
+
+/* Instituciones vinculadas (Institucional) */
+.instituciones { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+.institucion {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+  width: 220px; min-height: 140px; padding: 18px;
+  background: var(--blanco); border: 1px solid var(--borde); border-radius: var(--radio);
+  text-decoration: none; color: var(--azul); font-weight: 700; text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.institucion:hover { transform: translateY(-3px); box-shadow: var(--sombra); }
+.institucion img { max-width: 100%; max-height: 70px; object-fit: contain; }
+.institucion small { color: var(--texto-suave); font-weight: 600; }
+
 .footer-legal { border-top: 1px solid rgba(255, 255, 255, 0.12); margin-top: 32px; padding: 18px 16px; font-size: 0.9rem; }

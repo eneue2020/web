@@ -1,6 +1,6 @@
 import { DATA } from "../data.js";
 import { Pagina, Titulo } from "../components/Layout.jsx";
-import { PorQueElegirnos } from "../components/Bloques.jsx";
+import { PorQueElegirnos, Instituciones } from "../components/Bloques.jsx";
 
 function Direccion({ direccion }) {
   const { presidente, marcoLegal, autoridades, comisionRevisora } = direccion;
@@ -55,6 +55,12 @@ export default function Institucional() {
         </div>
       </section>
       <Direccion direccion={inst.direccion} />
+      <section className="seccion seccion-alterna">
+        <div className="contenedor">
+          <Titulo titulo="Instituciones vinculadas" />
+          <Instituciones />
+        </div>
+      </section>
     </>
   );
 }
