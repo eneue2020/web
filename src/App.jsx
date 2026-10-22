@@ -15,13 +15,14 @@ import Tramites from "./pages/Tramites.jsx";
 import Contactos from "./pages/Contactos.jsx";
 import Afiliarme from "./pages/Afiliarme.jsx";
 import Urgencias from "./pages/Urgencias.jsx";
+import Autorizaciones from "./pages/Autorizaciones.jsx";
 import { BotonUrgencias } from "./components/Urgencias.jsx";
 
 const PAGINAS = {
   home: Home, planes: Planes, cartilla: Cartilla, novedades: Novedades,
   prevencion: Prevencion, institucional: Institucional, faq: FAQ,
   tramites: Tramites, contactos: Contactos, afiliarme: Afiliarme,
-  urgencias: Urgencias,
+  urgencias: Urgencias, autorizaciones: Autorizaciones,
 };
 
 export default function App() {

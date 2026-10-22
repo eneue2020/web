@@ -66,6 +66,9 @@ export default function Tramites() {
                   {s.tramites.map((t) => <li key={t}>{t}</li>)}
                 </ul>
                 <div className="sector-acciones">
+                  {s.id === "gerencia-medica" && (
+                    <a href={CFG.autorizaciones.url} target="_blank" rel="noopener" className="btn btn-destacado">Pedir autorización</a>
+                  )}
                   <a href={"#contactos/" + s.id} className="btn btn-primario">Hacer la consulta</a>
                   <a href={"mailto:" + s.email} className="sector-email">{s.email}</a>
                 </div>

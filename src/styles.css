@@ -59,11 +59,12 @@ a { color: inherit; }
 }
 .nav a {
   display: block;
-  padding: 8px 12px;
+  padding: 8px 9px;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  white-space: nowrap;
   color: var(--texto);
   transition: background 0.2s, color 0.2s;
 }
@@ -282,6 +283,38 @@ td.col-destacada { background: #fff8e1; font-weight: 700; }
   background: var(--blanco);
 }
 
+/* ---------- Accesos rápidos (Home) ---------- */
+.accesos-contenedor { position: relative; z-index: 3; margin-top: -44px; }
+.accesos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+@media (max-width: 900px) { .accesos { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 700px) { .accesos-contenedor { margin-top: 16px; } }
+.acceso {
+  display: flex; align-items: center; gap: 12px; padding: 16px 18px;
+  background: var(--blanco); border-radius: var(--radio); box-shadow: 0 10px 26px rgba(11, 61, 145, 0.16);
+  text-decoration: none; color: var(--texto); transition: transform 0.15s, box-shadow 0.15s;
+  border-bottom: 4px solid var(--azul-medio);
+}
+.acceso:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(11, 61, 145, 0.22); }
+.acceso-icono { font-size: 1.8rem; }
+.acceso strong { display: block; color: var(--azul); }
+.acceso small { color: var(--texto-suave); font-weight: 600; }
+.acceso-urgente { border-bottom-color: var(--rojo); }
+.acceso-urgente strong, .acceso-urgente small { color: var(--rojo); }
+@media (max-width: 420px) { .acceso { padding: 12px; gap: 8px; } .acceso-icono { font-size: 1.4rem; } }
+
+/* ---------- Autorizaciones ---------- */
+.autorizaciones-hero { background: linear-gradient(130deg, var(--azul) 0%, var(--azul-medio) 60%, var(--verde) 130%); color: var(--blanco); padding: 48px 0 56px; }
+.autorizaciones-hero h1 { font-size: 2.6rem; margin: 12px 0 8px; }
+.autorizaciones-hero p { font-size: 1.15rem; max-width: 640px; margin: 0; }
+.btn-grande { padding: 16px 28px; font-size: 1.08rem; }
+.pasos { list-style: none; padding: 0; margin: 0; display: grid; gap: 20px; grid-template-columns: repeat(4, 1fr); counter-reset: paso; }
+@media (max-width: 1000px) { .pasos { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .pasos { grid-template-columns: 1fr; } .autorizaciones-hero h1 { font-size: 2rem; } }
+.paso-numero {
+  display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px;
+  border-radius: 50%; background: var(--azul); color: var(--blanco); font-weight: 800; margin-bottom: 10px;
+}
+
 /* ---------- Urgencias ---------- */
 :root { --rojo: #c62828; --rojo-oscuro: #8e0000; }
 
@@ -449,7 +482,7 @@ td.col-destacada { background: #fff8e1; font-weight: 700; }
 .nav-cta { margin-left: 8px; }
 .nav-cta .btn { padding: 8px 16px; font-size: 0.95rem; }
 .nav .nav-cta a.btn:hover { background: var(--dorado); color: #3e2700; }
-@media (max-width: 1250px) {
+@media (max-width: 1340px) {
   .btn-menu { display: block; }
   .nav {
     position: absolute; top: 68px; left: 0; right: 0;

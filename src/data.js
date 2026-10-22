@@ -38,6 +38,14 @@ export const DATA = {
       { area: "Control de aportes", email: "control.aportes@osmiss.org.ar", texto: "Consultas sobre aportes y situación de empadronamiento." },
       { area: "Gerencia médica", email: "gerencia.medica@osmiss.org.ar", texto: "Consultas médicas y de prestaciones." },
     ],
+    // Autorizaciones: pantalla "Pedidos de autorización" de la app de afiliados (pide iniciar sesión).
+    autorizaciones: {
+      url: "https://osmiss-app.bymovi.com/pedidos-autorizacion",
+      email: "autorizaciones@osmiss.org.ar",
+      // Paso a paso del registro en la app (publicado en osmiss.org.ar/cobertura-plan200.html).
+      registroUrl: "https://drive.google.com/file/d/1W7dtKNdsi2H_fvHa0HoBH7wYHoMxYGVg/view?usp=drive_link",
+    },
+    credencialUrl: "https://osmiss-app.bymovi.com/credencial-digital",
     // Urgencias y emergencias. Fuente: https://www.osmiss.org.ar/cobertura-plan200.html
     // Se muestran en la barra superior, el botón flotante (celular), la sección Urgencias y el footer.
     urgencias: {
@@ -89,6 +97,7 @@ export const DATA = {
     { id: "institucional", label: "Institucional" },
     { id: "faq", label: "FAQ" },
     { id: "tramites", label: "Trámites" },
+    { id: "autorizaciones", label: "Autorizaciones" },
     { id: "contactos", label: "Contactos" },
     { id: "urgencias", label: "Urgencias", urgente: true },
   ],
@@ -397,7 +406,8 @@ export const DATA = {
         },
         {
           p: "¿Qué es una autorización y cuándo la necesito?",
-          r: "Es un trámite previo que se realiza cuando tu médico te indica una práctica o un estudio que lo requiere. No te preocupes: nuestro equipo de la sede te indica dónde y cómo hacerla.",
+          r: "Es un trámite previo que se realiza cuando tu médico te indica una práctica, un estudio o una receta que lo requiere. Podés pedirla online desde la App OSMISS, en “Pedidos de autorización”, enviando tu orden médica.",
+          cta: { texto: "Cómo pedir una autorización", destino: "autorizaciones" },
         },
         {
           p: "¿Dónde queda la sede de OSMISS?",

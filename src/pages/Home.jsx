@@ -1,12 +1,15 @@
 import Carrusel from "../components/Carrusel.jsx";
 import { Titulo } from "../components/Layout.jsx";
 import { GrillaPlanes } from "../components/Planes.jsx";
-import { PorQueElegirnos, CarruselLogos, ListaNoticias, CtaAfiliarme } from "../components/Bloques.jsx";
+import { PorQueElegirnos, CarruselLogos, ListaNoticias, CtaAfiliarme, AccesosRapidos } from "../components/Bloques.jsx";
 
 export default function Home() {
   return (
     <>
       <Carrusel />
+      <div className="contenedor accesos-contenedor">
+        <AccesosRapidos />
+      </div>
       <section className="seccion">
         <div className="contenedor">
           <Titulo titulo="Nuestros planes" bajada="Elegí la cobertura ideal para vos y tu familia" />

@@ -30,6 +30,36 @@ export function CarruselLogos() {
   );
 }
 
+// Accesos rápidos del Home: lo que más buscan los afiliados, a un toque.
+export function AccesosRapidos() {
+  const CFG = DATA.config;
+  const tel = CFG.urgencias.telefonos[0];
+  const accesos = [
+    { icono: "✅", titulo: "Autorizaciones", texto: "Pedila online en la App", href: CFG.autorizaciones.url, externo: true },
+    { icono: "🩺", titulo: "Cartilla", texto: "Encontrá prestadores", href: "#cartilla" },
+    { icono: "💳", titulo: "Credencial digital", texto: "Llevala en tu celular", href: CFG.credencialUrl, externo: true },
+    { icono: "🚑", titulo: "Urgencias 24 hs", texto: tel.numero, href: "tel:" + tel.tel, urgente: true },
+  ];
+  return (
+    <nav className="accesos" aria-label="Accesos rápidos">
+      {accesos.map((a) => (
+        <a
+          key={a.titulo}
+          href={a.href}
+          className={"acceso" + (a.urgente ? " acceso-urgente" : "")}
+          {...(a.externo ? { target: "_blank", rel: "noopener" } : {})}
+        >
+          <span className="acceso-icono">{a.icono}</span>
+          <span>
+            <strong>{a.titulo}</strong>
+            <small>{a.texto}</small>
+          </span>
+        </a>
+      ))}
+    </nav>
+  );
+}
+
 // Logos con link a las instituciones vinculadas (solo las que tienen URL cargada).
 export function Instituciones() {
   const lista = DATA.config.instituciones.filter((i) => i.url);
