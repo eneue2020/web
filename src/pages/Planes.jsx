@@ -1,8 +1,9 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { DATA } from "../data.js";
 import { BENEFICIOS } from "../beneficios.js";
 import { Pagina, Titulo, NoEncontrado } from "../components/Layout.jsx";
 import CuadroBeneficios from "../components/CuadroBeneficios.jsx";
+import ModalDetalle from "../components/ModalDetalle.jsx";
 import { GrillaPlanes } from "../components/Planes.jsx";
 import { CtaAfiliarme } from "../components/Bloques.jsx";
 
@@ -17,11 +18,13 @@ const COMPARATIVA = [
 
 function PlanDetalle({ id }) {
   const [verBeneficios, setVerBeneficios] = useState(false);
+  const [verDetalle, setVerDetalle] = useState(false);
+  const cerrarDetalle = useCallback(() => setVerDetalle(false), []);
   const cuadroRef = useRef(null);
   useEffect(() => {
     if (verBeneficios) cuadroRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   }, [verBeneficios]);
-  useEffect(() => setVerBeneficios(false), [id]);
+  useEffect(() => { setVerBeneficios(false); setVerDetalle(false); }, [id]);
 
   const plan = DATA.planes.find((p) => p.id === id);
   if (!plan) return <NoEncontrado />;
@@ -53,12 +56,13 @@ function PlanDetalle({ id }) {
                 </button>
               )}
               <a href={cartillaUrl} target="_blank" rel="noopener" className="btn btn-secundario">Ver cartilla</a>
-              {plan.detalleUrl && (
-                <a href={plan.detalleUrl} target="_blank" rel="noopener" className="btn btn-secundario">Ver Detalle Completo</a>
-              )}
+              <button className="btn btn-secundario" onClick={() => setVerDetalle(true)} aria-haspopup="dialog">
+                Ver Detalle Completo
+              </button>
             </div>
           </div>
         </div>
+        {verDetalle && <ModalDetalle plan={plan} onCerrar={cerrarDetalle} />}
         {cuadro && verBeneficios && (
           <div ref={cuadroRef} className="cuadro-contenedor">
             <CuadroBeneficios plan={plan} cuadro={cuadro} />

@@ -161,8 +161,6 @@ export const DATA = {
   planes: [
     {
       id: "osmiss-100",
-      // Descripción completa del plan en el sitio oficial.
-      detalleUrl: "https://www.osmiss.org.ar/cobertura-plan100-descripcion.html",
       nombre: "OSMISS-100",
       bajada: "Cobertura esencial",
       imagen: "",
@@ -173,8 +171,6 @@ export const DATA = {
     },
     {
       id: "osmiss-150",
-      // Descripción completa del plan en el sitio oficial.
-      detalleUrl: "https://www.osmiss.org.ar/cobertura-plan150-descripcion.html",
       nombre: "OSMISS-150",
       bajada: "Cobertura ampliada",
       imagen: "",
@@ -185,8 +181,6 @@ export const DATA = {
     },
     {
       id: "osmiss-200",
-      // Descripción completa del plan en el sitio oficial.
-      detalleUrl: "https://www.osmiss.org.ar/cobertura-plan200-descripcion.html",
       nombre: "OSMISS-200",
       bajada: "Cobertura integral",
       imagen: "",
@@ -197,8 +191,8 @@ export const DATA = {
     },
     {
       id: "osmiss-500",
-      // Sin descripción propia publicada: usa la del OSMISS-200.
-      detalleUrl: "https://www.osmiss.org.ar/cobertura-plan200-descripcion.html",
+      // Sin descripción propia publicada: usa la descripción completa del OSMISS-200 (src/descripciones.js).
+      descripcionCompleta: "osmiss-200",
       nombre: "OSMISS-500",
       bajada: "Cobertura superadora",
       destacado: true,

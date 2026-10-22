@@ -9,6 +9,7 @@ npm install      # instalar dependencias (solo la primera vez)
 npm run dev      # servidor de desarrollo en http://localhost:5173
 npm run build    # genera la versión optimizada en la carpeta dist/
 npm run preview  # sirve localmente lo generado en dist/
+npm run pdfs     # regenera los PDF de "Ver Detalle Completo" en public/pdf/ (requiere Chrome o Edge)
 ```
 
 ## Estructura
