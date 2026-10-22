@@ -55,6 +55,8 @@ export const DATA = {
 
   // Carrusel principal: título, bajada, CTA, destino, orden y estado (activo).
   // "imagen" e "imagenMobile" son opcionales; si no hay imagen se usa el fondo degradado.
+  // Fotos de Unsplash (licencia libre, uso comercial permitido). Para producción, reemplazar por fotos propias
+  // o descargarlas y servirlas desde /public.
   slides: [
     {
       orden: 1,
@@ -64,8 +66,8 @@ export const DATA = {
       bajada: "Habitación individual, cobertura en todo el país y atención preferencial para vos y tu familia.",
       cta: "Conocé el plan",
       destino: "planes/osmiss-500",
-      imagen: "",
-      imagenMobile: "",
+      imagen: "https://images.unsplash.com/photo-1758691462126-2ee47c8bf9e7?auto=format&fit=crop&w=1920&h=800&q=75",
+      imagenMobile: "https://images.unsplash.com/photo-1758691462126-2ee47c8bf9e7?auto=format&fit=crop&crop=faces&w=800&h=1000&q=70",
       fondo: "linear-gradient(120deg, #0b3d91 0%, #1565c0 55%, #26a69a 100%)",
     },
     {
@@ -76,8 +78,8 @@ export const DATA = {
       bajada: "Del OSMISS-100 al OSMISS-500: compará y elegí la cobertura que mejor se adapta a vos.",
       cta: "Comparar planes",
       destino: "planes",
-      imagen: "",
-      imagenMobile: "",
+      imagen: "https://images.unsplash.com/photo-1758691462666-6470b740f544?auto=format&fit=crop&w=1920&h=800&q=75",
+      imagenMobile: "https://images.unsplash.com/photo-1758691462666-6470b740f544?auto=format&fit=crop&crop=faces&w=800&h=1000&q=70",
       fondo: "linear-gradient(120deg, #00695c 0%, #26a69a 60%, #80cbc4 100%)",
     },
     {
@@ -88,8 +90,8 @@ export const DATA = {
       bajada: "Acercate a los vacunatorios adheridos con tu credencial. Sin costo para afiliados.",
       cta: "Leer la nota",
       destino: "novedades/vacunacion-antigripal-2026",
-      imagen: "",
-      imagenMobile: "",
+      imagen: "https://images.unsplash.com/photo-1576765974102-b756026ecee3?auto=format&fit=crop&w=1920&h=800&q=75",
+      imagenMobile: "https://images.unsplash.com/photo-1576765974102-b756026ecee3?auto=format&fit=crop&crop=faces&w=800&h=1000&q=70",
       fondo: "linear-gradient(120deg, #4527a0 0%, #5e35b1 55%, #1e88e5 100%)",
     },
     {
@@ -100,8 +102,8 @@ export const DATA = {
       bajada: "Llevala siempre en el celular y presentala en todos los prestadores de la cartilla.",
       cta: "Ver novedades",
       destino: "novedades/credencial-digital",
-      imagen: "",
-      imagenMobile: "",
+      imagen: "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=1920&h=800&q=75",
+      imagenMobile: "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&crop=faces&w=800&h=1000&q=70",
       fondo: "linear-gradient(120deg, #bf360c 0%, #f4511e 55%, #ffb300 100%)",
     },
   ],
