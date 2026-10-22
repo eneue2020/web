@@ -87,6 +87,7 @@ flowchart TD
     H -->|Footer e Institucional| TR[Trabajá con nosotros]
     TR --> CV[Formulario de CV con adjunto]
     CV --> RH[(Email: info@osmiss.org.ar - provisorio)]
+    RH -.->|Luego, a definir| Z
 ```
 
 > Todos los formularios terminan en **Zoho CRM** (y se guardan en el Backoffice). El campo **Tipo** del
@@ -229,8 +230,10 @@ Deben guardarse también en el Backoffice, según la propuesta.
 > El formulario de CV se envía como `multipart/form-data` (por el archivo adjunto) con `formulario: "cv"`
 > y `destinatario: "info@osmiss.org.ar"`. **Los CV deben llegar a info@osmiss.org.ar** (con el archivo adjunto).
 > **Destino provisorio:** OSMISS va a definir un email específico para RRHH; tomarlo de configuración, no fijo en el código.
-> **No forma parte de la integración con Zoho de la propuesta**: el backend debe reenviar cada CV por email
-> a esa casilla (y opcionalmente guardarlo en el Backoffice), respetando la Ley 25.326 de datos personales.
+> **Recorrido previsto:** formulario → email → **ingreso al CRM (a definir)**. Queda por definir si el CV
+> entra a Zoho CRM directamente desde el formulario (como el resto) o a partir del email específico de RRHH.
+> Este flujo no estaba en el alcance de integración con Zoho de la propuesta (afiliación, reclamos y consultas),
+> por lo que hay que confirmarlo con OSMISS y su proveedor de Zoho. Respetar la Ley 25.326 de datos personales.
 > En la página también se ofrece enviarlo directamente a esa dirección (link mailto).
 
 **Envío a Zoho CRM** — cada envío es un JSON con todos los campos del formulario más `formulario`,
@@ -327,6 +330,6 @@ y las descripciones completas en `src/descripciones.js`. Los PDF se generan con 
 
 **Integraciones**
 - **Zoho CRM**: endpoint de la API para los formularios.
-- **CV (Trabajá con nosotros)**: reenvío por email desde el backend, por ahora a info@osmiss.org.ar (**provisorio**, OSMISS definirá un email específico); validar las áreas de interés del formulario.
+- **CV (Trabajá con nosotros)**: reenvío por email desde el backend, por ahora a info@osmiss.org.ar (**provisorio**, OSMISS definirá un email específico) y **luego ingreso al CRM (a definir)**: directo desde el formulario o a partir del email específico. No incluido en el alcance de Zoho de la propuesta. Validar también las áreas de interés del formulario.
 - **bymovi**: la cartilla se embebe por recorte visual (depende de su diseño). Recomendado: pedir a bymovi un modo "embebido" oficial sin menú.
 - **GA4**, sitemap, Open Graph por página y URLs amigables (propuesta, punto 07).
