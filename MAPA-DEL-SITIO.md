@@ -28,7 +28,7 @@ OSMISS (sitio público)
 │
 ├── Cartilla ......................................... /cartilla
 ├── Novedades ........................................ /novedades
-│   └── Nota ......................................... /novedades/{slug}
+│   └── Nota ......................................... /novedades/{id-de-la-nota}
 ├── Prevención ....................................... /prevencion
 ├── Institucional .................................... /institucional
 │   ├── Quiénes somos (misión, visión, valores)
@@ -127,7 +127,7 @@ Orden de bloques:
 - Cartilla de bymovi **embebida** (iframe), recortando su menú lateral y su barra superior para que se vea integrada al sitio.
 - Link "Abrir la cartilla en la App OSMISS" (pantalla completa).
 
-### 3.5 Novedades `/novedades` y `/novedades/{slug}`
+### 3.5 Novedades `/novedades` y `/novedades/{id-de-la-nota}`
 - Listado de notas (fecha, título, resumen, "Leer más").
 - Ficha de nota: fecha, título, resumen y cuerpo.
 
@@ -247,9 +247,9 @@ Correspondencia entre los contenidos del sitio y los módulos de Backoffice de l
 
 | Módulo BO | Contenido | Campos principales |
 |---|---|---|
-| **Carrusel de Home** | Slides | tipo, título, bajada, CTA, destino, orden, activo, imagen desktop, imagen mobile |
-| **Planes** | 4 planes | id/slug, nombre, bajada, imagen, descripción, características, beneficios, info adicional, destacado, cuadro de beneficios/coseguros, descripción completa (capítulos) + PDF |
-| **Noticias / Novedades** | Notas | slug, fecha, título, resumen, cuerpo, imagen |
+| **Carrusel de Home** | Diapositivas (slides) | tipo, título, bajada, CTA, destino, orden, activo, imagen para computadora, imagen para celular |
+| **Planes** | 4 planes | identificador para la URL (ej. osmiss-100), nombre, bajada, imagen, descripción, características, beneficios, info adicional, destacado, cuadro de beneficios/coseguros, descripción completa (capítulos) + PDF |
+| **Noticias / Novedades** | Notas | identificador para la URL, fecha, título, resumen, cuerpo, imagen |
 | **Preguntas frecuentes** | FAQ | categoría, pregunta, respuesta, CTA opcional, orden |
 | **Logos de prestadores** | Carrusel del Home | nombre, logo, orden |
 
