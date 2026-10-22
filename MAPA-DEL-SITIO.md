@@ -38,6 +38,7 @@ OSMISS (sitio público)
 ├── FAQ .............................................. /faq
 ├── Trámites ......................................... /tramites
 ├── Autorizaciones ................................... /autorizaciones
+├── Empresas ("Quiero asociar a mi empresa") ........ /empresas
 ├── Contactos ........................................ /contactos
 │   └── Con área preseleccionada ..................... /contactos/{area}
 ├── Urgencias ........................................ /urgencias
@@ -87,6 +88,10 @@ flowchart TD
     H -->|Footer e Institucional| TR[Trabajá con nosotros]
     TR --> CV[Formulario de CV con adjunto]
     CV --> RH[(Email: info@osmiss.org.ar - provisorio)]
+    H -->|Menú| EM[Empresas]
+    EM --> FE[Formulario Quiero asociar a mi empresa]
+    FE --> Z
+    EM -->|Empresas asociadas| CO
     RH -.->|Luego, a definir| Z
 ```
 
@@ -102,7 +107,7 @@ flowchart TD
 | Elemento | Escritorio / tablet | Celular |
 |---|---|---|
 | **Barra de urgencias** (roja, fija arriba) | "Urgencias y emergencias 24 hs" + 0810-333-8888 y (011) 4000-8888 clickeables + "Más información" → /urgencias | Se oculta (la reemplaza el botón flotante) |
-| **Menú principal** (fijo) | Home · Planes · Cartilla · Novedades · Prevención · Institucional · FAQ · Trámites · Autorizaciones · Contactos · **Urgencias** (en rojo) + botón **Quiero afiliarme** | Menú hamburguesa (☰) por debajo de 1340 px |
+| **Menú principal** (fijo) | Home · Planes · Cartilla · Novedades · Prevención · Institucional · FAQ · Trámites · Autorizaciones · **Empresas** · Contactos · **Urgencias** (en rojo) + botón **Quiero afiliarme** | Menú hamburguesa (☰) por debajo de 1340 px |
 | **Botón flotante Urgencias** | — | Botón rojo fijo abajo a la derecha; despliega panel con 2 botones "Llamar al…" (no aparece dentro de /urgencias) |
 | **Footer** | Logo · Navegación · Planes · Contacto (urgencias 24 hs, teléfonos, email, dirección, horario) · Quiero afiliarme · Instituciones vinculadas · RNOS, CUIT y SSSalud | Igual, en una columna |
 
@@ -173,6 +178,14 @@ Orden de bloques:
 - 4 pasos del trámite.
 - Qué es una autorización · Quiénes pueden usar la App · Consultas a autorizaciones@osmiss.org.ar.
 
+### 3.10 bis Empresas `/empresas`
+- Encabezado **"Quiero asociar a mi empresa"** + botones "Quiero asociar a mi empresa" (baja al formulario) y "Ver planes".
+- "¿Por qué elegir OSMISS para tu empresa?" (3 beneficios, textos a validar).
+- **Formulario "Quiero asociar a mi empresa"** (ver [Formularios](#5-formularios)) → Zoho CRM.
+- **¿Tu empresa ya está asociada?** (contenido de osmiss.org.ar/empresas.html): Control de aportes y Afiliaciones,
+  cada uno con "Hacer la consulta" (→ /contactos/{area}) y su email; teléfonos y horario; aviso de que solo
+  Casa Central confirma afiliaciones e imputación de aportes.
+
 ### 3.11 Contactos `/contactos` y `/contactos/{area}`
 - **Canales**: teléfono, 0800 interior, email y App (clickeables).
 - **Formulario de contacto / sugerencias / reclamos** (ver [Formularios](#5-formularios)).
@@ -225,6 +238,7 @@ Deben guardarse también en el Backoffice, según la propuesta.
 |---|---|---|
 | **Quiero afiliarme** | /afiliarme | Nombre*, Apellido*, DNI* (7-8 dígitos), Fecha de nacimiento*, Teléfono*, Email*, Plan de interés, Comentarios |
 | **Contacto / Sugerencias / Reclamos** | /contactos | Tipo* (Quiero afiliarme / Consulta / Sugerencia / Reclamo), Área (Afiliaciones / Gerencia Médica / Control de Aportes / Otras consultas), Nombre*, Apellido*, Email*, Teléfono*, DNI/CUIL/CUIT, Mensaje* |
+| **Quiero asociar a mi empresa** | /empresas | Razón social*, CUIT* (11 dígitos, con o sin guiones), Cantidad de empleados* (1 a 10 / 11 a 50 / 51 a 200 / Más de 200), Rubro, Localidad*, Provincia*, Contacto (nombre y apellido)*, Cargo, Email*, Teléfono*, Comentarios |
 | **Envío de CV** | /trabaja-con-nosotros | Nombre*, Apellido*, Email*, Teléfono*, Área de interés*, CV* (PDF/DOC/DOCX, máx. 5 MB), Mensaje, Consentimiento* para guardar los datos |
 
 > El formulario de CV se envía como `multipart/form-data` (por el archivo adjunto) con `formulario: "cv"`
@@ -245,6 +259,7 @@ que indica de dónde viene. En Contactos, el campo `tipo` indica la categoría e
 | Contactos → **Quiero afiliarme** | `formulario: "contacto"`, `tipo: "Quiero afiliarme"` | Lead / potencial afiliado |
 | Contactos → **Consulta** | `formulario: "contacto"`, `tipo: "Consulta"`, `area` | Consulta, derivada por Área |
 | Contactos → **Sugerencia** | `formulario: "contacto"`, `tipo: "Sugerencia"`, `area` | Sugerencia |
+| **Quiero asociar a mi empresa** | `formulario: "empresa"`, `cuit`, `empleados` | Lead de empresa (B2B), a confirmar con el proveedor de Zoho |
 | Contactos → **Reclamo** | `formulario: "contacto"`, `tipo: "Reclamo"`, `area` | Caso / ticket de reclamo, derivado por Área |
 
 Ejemplo de un reclamo:
@@ -323,6 +338,7 @@ y las descripciones completas en `src/descripciones.js`. Los PDF se generan con 
 - **OSMISS-500**: el sitio actual y la App solo mencionan los planes 100, 150 y 200. Hoy el 500 usa el cuadro de beneficios y la descripción completa del 200.
 - **Logos de prestadores** destacados (IMAC, Centro Médico Monserrat, Sanatorio del Oeste, San Camilo, Anchorena, Bazterrica, FLENI, Favaloro, Arauz, GEDYT, Sanatorio Modelo Caseros): OSMISS los gestiona con cada prestador.
 - **URLs de Fipem y Funsalud**.
+- **Empresas**: beneficios para empresas y rangos de cantidad de empleados (textos de ejemplo); confirmar que el formulario de empresas entre en la integración con Zoho (la propuesta menciona afiliación, reclamos y consultas).
 - **Textos médicos** de Urgencias y Autorizaciones (pasos, números públicos 107/911).
 - Datos de la Dirección ("Secretaria de Actas", tildes en apellidos).
 - Aviso "DNU 297/2020 — suspendido el ingreso a Casa Central" del sitio actual: confirmar que ya no corresponde (no se incluyó).

@@ -17,6 +17,7 @@ import Afiliarme from "./pages/Afiliarme.jsx";
 import Urgencias from "./pages/Urgencias.jsx";
 import Autorizaciones from "./pages/Autorizaciones.jsx";
 import TrabajaConNosotros from "./pages/TrabajaConNosotros.jsx";
+import Empresas from "./pages/Empresas.jsx";
 import { BotonUrgencias } from "./components/Urgencias.jsx";
 
 const PAGINAS = {
@@ -24,7 +25,7 @@ const PAGINAS = {
   prevencion: Prevencion, institucional: Institucional, faq: FAQ,
   tramites: Tramites, contactos: Contactos, afiliarme: Afiliarme,
   urgencias: Urgencias, autorizaciones: Autorizaciones,
-  "trabaja-con-nosotros": TrabajaConNosotros,
+  "trabaja-con-nosotros": TrabajaConNosotros, empresas: Empresas,
 };
 
 export default function App() {

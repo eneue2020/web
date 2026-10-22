@@ -46,6 +46,24 @@ export const DATA = {
       registroUrl: "https://drive.google.com/file/d/1W7dtKNdsi2H_fvHa0HoBH7wYHoMxYGVg/view?usp=drive_link",
     },
     credencialUrl: "https://osmiss-app.bymovi.com/credencial-digital",
+    // Empresas (#empresas): formulario "Quiero asociar a mi empresa" (formulario: "empresa") y
+    // atención a empleadores ya asociados. Fuente: https://www.osmiss.org.ar/empresas.html
+    empresas: {
+      // Beneficios: textos de ejemplo orientados a captar empresas; validar con OSMISS.
+      beneficios: [
+        { icono: "👥", titulo: "Cobertura para todo tu equipo", texto: "Planes para tus empleados y su grupo familiar, con atención en todo el país." },
+        { icono: "📱", titulo: "Gestión simple y digital", texto: "Credencial digital, autorizaciones y cartilla desde la App OSMISS." },
+        { icono: "🤝", titulo: "Atención personalizada", texto: "Un equipo dedicado para acompañar a tu empresa en altas, bajas y aportes." },
+      ],
+      empleados: ["1 a 10", "11 a 50", "51 a 200", "Más de 200"],
+      // Atención a empresas ya asociadas (contenido del sitio actual).
+      asociadas: [
+        { titulo: "Control de aportes", texto: "Verificar empleados, verificar aportes y saldar deudas.", email: "control.aportes@osmiss.org.ar", area: "control-aportes" },
+        { titulo: "Afiliaciones", texto: "Altas, bajas, cambios de prestación y credenciales de tus empleados.", email: "afiliaciones@osmiss.org.ar", area: "afiliaciones" },
+      ],
+      aviso: "OSMISS Casa Central es la única entidad que puede confirmar la correcta afiliación de sus empleados, la correcta imputación de aportes o el pago de aportes atrasados.",
+      ayuda: "Al escribirnos, incluí una breve reseña de tu consulta, el CUIT y el nombre de la empresa, y un teléfono de contacto.",
+    },
     // Trabajá con nosotros (#trabaja-con-nosotros): recepción de CV. El formulario se envía con
     // formulario: "cv", destinatario (email) y el archivo adjunto en el campo "cv" (multipart).
     // Luego ingresa al CRM (a definir: directo desde el formulario o desde el email específico de RRHH).
@@ -112,6 +130,7 @@ export const DATA = {
     { id: "faq", label: "FAQ" },
     { id: "tramites", label: "Trámites" },
     { id: "autorizaciones", label: "Autorizaciones" },
+    { id: "empresas", label: "Empresas" },
     { id: "contactos", label: "Contactos" },
     { id: "urgencias", label: "Urgencias", urgente: true },
   ],
