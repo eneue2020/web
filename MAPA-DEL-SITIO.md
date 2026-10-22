@@ -55,18 +55,34 @@ flowchart TD
     P --> P1[Ficha de plan]
     P1 --> B[Beneficios y coseguros]
     P1 --> D[Detalle completo: modal + PDF]
-    P1 --> A[Quiero afiliarme]
+    P1 --> A[Formulario Quiero afiliarme]
     P1 --> C[(Cartilla en App bymovi)]
     H --> CA[Cartilla embebida]
     H --> N[Novedades] --> N1[Nota]
-    H --> T[Trámites] --> CO[Contactos con área]
+    H --> T[Trámites] -->|Hacer la consulta: área preseleccionada| CO
     H --> AU[Autorizaciones] --> APP[(App: Pedidos de autorización)]
     H --> U[Urgencias] --> TEL((Llamar VITTAL))
     H --> I[Institucional]
     H --> F[FAQ]
-    A --> Z[(Zoho CRM)]
-    CO --> Z
+    H -->|Menú y footer| CO[Contactos]
+    H -->|Botón Quiero afiliarme| A
+    CO --> FC[Formulario de contacto]
+    FC --> TIPO{Tipo}
+    TIPO --> T1[Consulta]
+    TIPO --> T2[Sugerencia]
+    TIPO --> T3[Reclamo]
+    TIPO --> T4[Quiero afiliarme]
+    T1 --> Z[(Zoho CRM)]
+    T2 --> Z
+    T3 --> Z
+    T4 --> Z
+    A --> Z
 ```
+
+> Todos los formularios terminan en **Zoho CRM** (y se guardan en el Backoffice). El campo **Tipo** del
+> formulario de Contactos (Consulta / Sugerencia / Reclamo / Quiero afiliarme) y el campo **Área** se envían
+> al CRM para que cada caso se derive al sector correspondiente. La configuración de flujos en Zoho
+> (por ejemplo, que los reclamos generen un caso o ticket) está a cargo de OSMISS y su proveedor.
 
 ---
 
@@ -192,6 +208,36 @@ Deben guardarse también en el Backoffice, según la propuesta.
 |---|---|---|
 | **Quiero afiliarme** | /afiliarme | Nombre*, Apellido*, DNI* (7-8 dígitos), Fecha de nacimiento*, Teléfono*, Email*, Plan de interés, Comentarios |
 | **Contacto / Sugerencias / Reclamos** | /contactos | Tipo* (Quiero afiliarme / Consulta / Sugerencia / Reclamo), Área (Afiliaciones / Gerencia Médica / Control de Aportes / Otras consultas), Nombre*, Apellido*, Email*, Teléfono*, DNI/CUIL/CUIT, Mensaje* |
+
+**Envío a Zoho CRM** — cada envío es un JSON con todos los campos del formulario más `formulario`,
+que indica de dónde viene. En Contactos, el campo `tipo` indica la categoría elegida y `area`, el sector:
+
+| Formulario / Tipo elegido | Datos clave enviados | Uso sugerido en Zoho |
+|---|---|---|
+| Quiero afiliarme (formulario de afiliación) | `formulario: "afiliacion"`, `plan` | Lead / potencial afiliado |
+| Contactos → **Quiero afiliarme** | `formulario: "contacto"`, `tipo: "Quiero afiliarme"` | Lead / potencial afiliado |
+| Contactos → **Consulta** | `formulario: "contacto"`, `tipo: "Consulta"`, `area` | Consulta, derivada por Área |
+| Contactos → **Sugerencia** | `formulario: "contacto"`, `tipo: "Sugerencia"`, `area` | Sugerencia |
+| Contactos → **Reclamo** | `formulario: "contacto"`, `tipo: "Reclamo"`, `area` | Caso / ticket de reclamo, derivado por Área |
+
+Ejemplo de un reclamo:
+
+```json
+{
+  "formulario": "contacto",
+  "tipo": "Reclamo",
+  "area": "Gerencia Médica",
+  "nombre": "Ana",
+  "apellido": "Pérez",
+  "email": "ana@ejemplo.com",
+  "telefono": "11 5555-5555",
+  "dni": "30111222",
+  "mensaje": "Texto del reclamo"
+}
+```
+
+Accesos al formulario de Contactos: menú principal, footer, banda final de FAQ ("Hacer una consulta"),
+tarjetas de Trámites ("Hacer la consulta", con el Área preseleccionada) y tarjetas de Autorizaciones.
 
 ---
 
