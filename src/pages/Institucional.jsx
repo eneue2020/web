@@ -61,6 +61,15 @@ export default function Institucional() {
           <Instituciones />
         </div>
       </section>
+      <section className="cta-banda">
+        <div className="contenedor">
+          <div>
+            <h2>¿Querés formar parte de nuestro equipo?</h2>
+            <p>Envianos tu CV y sumate a una obra social que cuida a las personas.</p>
+          </div>
+          <a href="#trabaja-con-nosotros" className="btn btn-destacado">Envianos tu CV</a>
+        </div>
+      </section>
     </>
   );
 }

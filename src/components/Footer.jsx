@@ -8,11 +8,15 @@ export default function Footer() {
         <div>
           <a href="#home" className="logo logo-footer">OSMISS<span>.</span></a>
           <p>Obra social comprometida con tu salud y la de tu familia.</p>
+          <a href="#trabaja-con-nosotros" className="footer-empleo">
+            💼 ¿Querés formar parte de nuestro equipo? <strong>Envianos tu CV</strong>
+          </a>
         </div>
         <div>
           <strong>Navegación</strong>
           <ul>
             {DATA.menu.map((m) => <li key={m.id}><a href={"#" + m.id}>{m.label}</a></li>)}
+            <li><a href="#trabaja-con-nosotros">Trabajá con nosotros</a></li>
           </ul>
         </div>
         <div>

@@ -41,6 +41,8 @@ OSMISS (sitio público)
 ├── Contactos ........................................ /contactos
 │   └── Con área preseleccionada ..................... /contactos/{area}
 ├── Urgencias ........................................ /urgencias
+├── Trabajá con nosotros (envío de CV) ............... /trabaja-con-nosotros
+│        (acceso desde el footer e Institucional, no está en el menú principal)
 │
 └── Quiero afiliarme (formulario) .................... /afiliarme
     └── Con plan preseleccionado ..................... /afiliarme/{plan}
@@ -82,6 +84,9 @@ flowchart TD
     T3 --> Z
     T4 --> Z
     A --> Z
+    H -->|Footer e Institucional| TR[Trabajá con nosotros]
+    TR --> CV[Formulario de CV con adjunto]
+    CV --> RH[(RRHH: destino a definir)]
 ```
 
 > Todos los formularios terminan en **Zoho CRM** (y se guardan en el Backoffice). El campo **Tipo** del
@@ -182,6 +187,12 @@ Orden de bloques:
 ### 3.13 Quiero afiliarme `/afiliarme` y `/afiliarme/{plan}`
 - Formulario de afiliación (ver [Formularios](#5-formularios)).
 
+### 3.14 Trabajá con nosotros `/trabaja-con-nosotros`
+- Encabezado: **"¿Querés formar parte de nuestro equipo? Envianos tu CV"** + botón "Enviar mi CV".
+- "¿Por qué trabajar en OSMISS?" (3 motivos).
+- **Formulario de CV** con archivo adjunto (ver [Formularios](#5-formularios)).
+- Accesos: footer (destacado y en Navegación) y banda al final de Institucional.
+
 ---
 
 ## 4. Enlaces externos
@@ -213,6 +224,11 @@ Deben guardarse también en el Backoffice, según la propuesta.
 |---|---|---|
 | **Quiero afiliarme** | /afiliarme | Nombre*, Apellido*, DNI* (7-8 dígitos), Fecha de nacimiento*, Teléfono*, Email*, Plan de interés, Comentarios |
 | **Contacto / Sugerencias / Reclamos** | /contactos | Tipo* (Quiero afiliarme / Consulta / Sugerencia / Reclamo), Área (Afiliaciones / Gerencia Médica / Control de Aportes / Otras consultas), Nombre*, Apellido*, Email*, Teléfono*, DNI/CUIL/CUIT, Mensaje* |
+| **Envío de CV** | /trabaja-con-nosotros | Nombre*, Apellido*, Email*, Teléfono*, Área de interés*, CV* (PDF/DOC/DOCX, máx. 5 MB), Mensaje, Consentimiento* para guardar los datos |
+
+> El formulario de CV se envía como `multipart/form-data` (por el archivo adjunto) con `formulario: "cv"`.
+> **No forma parte de la integración con Zoho de la propuesta**: definir el destino (casilla de RRHH,
+> almacenamiento en el Backoffice o Zoho Recruit) y el tratamiento de datos personales (Ley 25.326).
 
 **Envío a Zoho CRM** — cada envío es un JSON con todos los campos del formulario más `formulario`,
 que indica de dónde viene. En Contactos, el campo `tipo` indica la categoría elegida y `area`, el sector:
@@ -308,5 +324,6 @@ y las descripciones completas en `src/descripciones.js`. Los PDF se generan con 
 
 **Integraciones**
 - **Zoho CRM**: endpoint de la API para los formularios.
+- **CV (Trabajá con nosotros)**: definir quién recibe los CV y dónde se guardan; áreas de interés del formulario.
 - **bymovi**: la cartilla se embebe por recorte visual (depende de su diseño). Recomendado: pedir a bymovi un modo "embebido" oficial sin menú.
 - **GA4**, sitemap, Open Graph por página y URLs amigables (propuesta, punto 07).

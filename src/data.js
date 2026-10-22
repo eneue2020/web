@@ -46,6 +46,17 @@ export const DATA = {
       registroUrl: "https://drive.google.com/file/d/1W7dtKNdsi2H_fvHa0HoBH7wYHoMxYGVg/view?usp=drive_link",
     },
     credencialUrl: "https://osmiss-app.bymovi.com/credencial-digital",
+    // Trabajá con nosotros (#trabaja-con-nosotros): recepción de CV. El formulario se envía con
+    // formulario: "cv" y el archivo adjunto en el campo "cv" (multipart). Definir quién los recibe.
+    rrhh: {
+      maxMb: 5,
+      areas: ["Atención al afiliado", "Administración", "Afiliaciones", "Auditoría médica", "Sistemas", "Otra"],
+      motivos: [
+        { icono: "🤝", titulo: "Vocación de servicio", texto: "Trabajamos todos los días para cuidar la salud de nuestros afiliados y sus familias." },
+        { icono: "📈", titulo: "Crecimiento", texto: "Valoramos el aprendizaje y el desarrollo profesional de cada integrante del equipo." },
+        { icono: "💙", titulo: "Buen clima", texto: "Un equipo cercano, que se apoya y trabaja con respeto y compromiso." },
+      ],
+    },
     // Urgencias y emergencias. Fuente: https://www.osmiss.org.ar/cobertura-plan200.html
     // Se muestran en la barra superior, el botón flotante (celular), la sección Urgencias y el footer.
     urgencias: {

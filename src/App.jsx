@@ -16,6 +16,7 @@ import Contactos from "./pages/Contactos.jsx";
 import Afiliarme from "./pages/Afiliarme.jsx";
 import Urgencias from "./pages/Urgencias.jsx";
 import Autorizaciones from "./pages/Autorizaciones.jsx";
+import TrabajaConNosotros from "./pages/TrabajaConNosotros.jsx";
 import { BotonUrgencias } from "./components/Urgencias.jsx";
 
 const PAGINAS = {
@@ -23,6 +24,7 @@ const PAGINAS = {
   prevencion: Prevencion, institucional: Institucional, faq: FAQ,
   tramites: Tramites, contactos: Contactos, afiliarme: Afiliarme,
   urgencias: Urgencias, autorizaciones: Autorizaciones,
+  "trabaja-con-nosotros": TrabajaConNosotros,
 };
 
 export default function App() {
@@ -30,8 +32,10 @@ export default function App() {
   const Componente = PAGINAS[pagina] || NoEncontrado;
 
   useEffect(() => {
-    const item = DATA.menu.find((m) => m.id === pagina);
-    document.title = (item && pagina !== "home" ? item.label + " | " : "") + "OSMISS - Obra Social";
+    // Páginas que no están en el menú pero tienen título propio.
+    const otras = { afiliarme: "Quiero afiliarme", "trabaja-con-nosotros": "Trabajá con nosotros" };
+    const titulo = DATA.menu.find((m) => m.id === pagina)?.label || otras[pagina];
+    document.title = (titulo && pagina !== "home" ? titulo + " | " : "") + "OSMISS - Obra Social";
   }, [pagina]);
 
   return (
