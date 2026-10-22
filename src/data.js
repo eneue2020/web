@@ -2,18 +2,41 @@
 // (con "npm run dev" corriendo, los cambios se ven al instante en el navegador).
 // Estructura basada en "Propuesta Web - Osmiss V2" (sitio público). En la plataforma final
 // estos datos vendrán del Backoffice (módulos: Carrusel, Planes, Noticias, FAQ y Logos).
-// NOTA: prestaciones, noticias, teléfonos y prestadores son de ejemplo; reemplazalos por los reales.
+// NOTA: prestaciones, noticias y prestadores son de ejemplo; reemplazalos por los reales.
+// Los datos de contacto y las FAQ son los del sitio actual (osmiss.org.ar).
 
 export const DATA = {
   config: {
-    // Link a la cartilla de OSMISS publicada en bymovi (completar con la URL real).
-    cartillaUrl: "#",
+    // App OSMISS en bymovi, donde está publicada la cartilla.
+    cartillaUrl: "https://osmiss-app.bymovi.com/inicio",
+    appUrl: "https://osmiss-app.bymovi.com/inicio",
     telefono: "(011) 4334-6611",
-    telefonoInterior: "0800-345-6764",
-    guardia: "0800-000-0001", // ejemplo: completar con el número real
+    telefonoTel: "+541143346611",
+    telefonoInterior: "0800-345-OSMISS (6764)",
+    telefonoInteriorTel: "08003456764",
     email: "info@osmiss.org.ar",
-    direccion: "Paraguay 661, 2° piso, CABA",
+    direccion: "Paraguay 661, 2° piso",
+    localidad: "(C1057AAG) Ciudad de Buenos Aires",
+    mapaUrl: "https://maps.app.goo.gl/6KXKt7Ua6w6kS43D9",
+    mapaEmbed: "https://www.google.com/maps?q=Paraguay+661,+C1057AAG+CABA,+Argentina&output=embed",
     horario: "Lunes a viernes de 9 a 17 hs",
+    rnos: "002501",
+    cuit: "30-70897857-0",
+    // Emails por área, para que cada consulta llegue directo a quien la resuelve.
+    emails: [
+      { area: "Consultas generales", email: "info@osmiss.org.ar", texto: "Información sobre planes, cobertura y la obra social." },
+      { area: "Afiliaciones", email: "afiliaciones@osmiss.org.ar", texto: "Sumate a OSMISS, cambio de obra social, credenciales y grupo familiar." },
+      { area: "Autorizaciones", email: "autorizaciones@osmiss.org.ar", texto: "Prácticas, estudios e internaciones que requieren autorización." },
+      { area: "Control de aportes", email: "control.aportes@osmiss.org.ar", texto: "Consultas sobre aportes y situación de empadronamiento." },
+      { area: "Gerencia médica", email: "gerencia.medica@osmiss.org.ar", texto: "Consultas médicas y de prestaciones." },
+    ],
+    // Superintendencia de Servicios de Salud (dato obligatorio para obras sociales).
+    sssalud: {
+      telefono: "0800-222-SALUD (72583)",
+      telefonoTel: "080022272583",
+      horario: "Lunes a viernes de 8 a 16 hs",
+      direccion: "Bartolomé Mitre 434, PB, CABA",
+    },
     // Endpoint de la API que reenvía los formularios a Zoho CRM. Vacío = modo demo (no envía).
     formulariosApi: "",
   },

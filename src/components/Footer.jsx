@@ -23,11 +23,21 @@ export default function Footer() {
         </div>
         <div>
           <strong>Contacto</strong>
-          <p>📞 {CFG.telefono}<br />🚑 Guardia: {CFG.guardia}<br />✉️ {CFG.email}<br />📍 {CFG.direccion}</p>
+          <p>
+            📞 <a href={"tel:" + CFG.telefonoTel}>{CFG.telefono}</a><br />
+            Interior (gratis): <a href={"tel:" + CFG.telefonoInteriorTel}>{CFG.telefonoInterior}</a><br />
+            ✉️ <a href={"mailto:" + CFG.email}>{CFG.email}</a><br />
+            📍 {CFG.direccion}, CABA<br />
+            🕘 {CFG.horario}
+          </p>
           <a href="#afiliarme" className="btn btn-destacado">Quiero afiliarme</a>
         </div>
       </div>
-      <div className="contenedor footer-legal">© {new Date().getFullYear()} OSMISS · Todos los derechos reservados</div>
+      <div className="contenedor footer-legal">
+        © {new Date().getFullYear()} OSMISS · Obra Social de Ministros, Secretarios y Subsecretarios · RNOS {CFG.rnos} · CUIT {CFG.cuit}
+        <br />
+        SSSalud: <a href={"tel:" + CFG.sssalud.telefonoTel}>{CFG.sssalud.telefono}</a> · {CFG.sssalud.horario}
+      </div>
     </footer>
   );
 }
