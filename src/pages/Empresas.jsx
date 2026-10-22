@@ -49,6 +49,7 @@ export default function Empresas() {
               textoBoton="Enviar solicitud"
               mensajeOk="¡Gracias por tu interés! Recibimos los datos de tu empresa y un asesor se va a comunicar con vos a la brevedad."
             >
+              <input type="hidden" name="destinatario" value={EMP.email} />
               <div className="fila">
                 <Campo label="Razón social" name="razonSocial" required />
                 <Campo
@@ -86,6 +87,12 @@ export default function Empresas() {
               <Campo label="Comentarios" name="comentarios" type="textarea" />
             </Formulario>
           </div>
+          <p className="cartilla-pie">
+            ¿Preferís escribirnos? Envianos los datos de tu empresa a{" "}
+            <a href={"mailto:" + EMP.email + "?subject=" + encodeURIComponent("Quiero asociar a mi empresa")}>
+              <strong>{EMP.email}</strong>
+            </a>.
+          </p>
         </div>
       </section>
 

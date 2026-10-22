@@ -49,6 +49,9 @@ export const DATA = {
     // Empresas (#empresas): formulario "Quiero asociar a mi empresa" (formulario: "empresa") y
     // atención a empleadores ya asociados. Fuente: https://www.osmiss.org.ar/empresas.html
     empresas: {
+      // Destino del formulario "Quiero asociar a mi empresa", por ahora por email
+      // hasta que se defina cómo ingresa al CRM.
+      email: "contrataciones@osmiss.org.ar",
       // Beneficios: textos de ejemplo orientados a captar empresas; validar con OSMISS.
       beneficios: [
         { icono: "👥", titulo: "Cobertura para todo tu equipo", texto: "Planes para tus empleados y su grupo familiar, con atención en todo el país." },

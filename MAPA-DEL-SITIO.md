@@ -90,7 +90,8 @@ flowchart TD
     CV --> RH[(Email: info@osmiss.org.ar - provisorio)]
     H -->|Menú| EM[Empresas]
     EM --> FE[Formulario Quiero asociar a mi empresa]
-    FE --> Z
+    FE --> EE[(Email: contrataciones@osmiss.org.ar)]
+    EE -.->|Luego, a definir| Z
     EM -->|Empresas asociadas| CO
     RH -.->|Luego, a definir| Z
 ```
@@ -181,7 +182,8 @@ Orden de bloques:
 ### 3.10 bis Empresas `/empresas`
 - Encabezado **"Quiero asociar a mi empresa"** + botones "Quiero asociar a mi empresa" (baja al formulario) y "Ver planes".
 - "¿Por qué elegir OSMISS para tu empresa?" (3 beneficios, textos a validar).
-- **Formulario "Quiero asociar a mi empresa"** (ver [Formularios](#5-formularios)) → Zoho CRM.
+- **Formulario "Quiero asociar a mi empresa"** (ver [Formularios](#5-formularios)) → por ahora a **contrataciones@osmiss.org.ar**;
+  luego ingresará al CRM (a definir). Debajo del formulario se ofrece también escribir directo a esa dirección (mailto).
 - **¿Tu empresa ya está asociada?** (contenido de osmiss.org.ar/empresas.html): Control de aportes y Afiliaciones,
   cada uno con "Hacer la consulta" (→ /contactos/{area}) y su email; teléfonos y horario; aviso de que solo
   Casa Central confirma afiliaciones e imputación de aportes.
@@ -259,7 +261,7 @@ que indica de dónde viene. En Contactos, el campo `tipo` indica la categoría e
 | Contactos → **Quiero afiliarme** | `formulario: "contacto"`, `tipo: "Quiero afiliarme"` | Lead / potencial afiliado |
 | Contactos → **Consulta** | `formulario: "contacto"`, `tipo: "Consulta"`, `area` | Consulta, derivada por Área |
 | Contactos → **Sugerencia** | `formulario: "contacto"`, `tipo: "Sugerencia"`, `area` | Sugerencia |
-| **Quiero asociar a mi empresa** | `formulario: "empresa"`, `cuit`, `empleados` | Lead de empresa (B2B), a confirmar con el proveedor de Zoho |
+| **Quiero asociar a mi empresa** | `formulario: "empresa"`, `destinatario: "contrataciones@osmiss.org.ar"`, `cuit`, `empleados` | **Por ahora por email a contrataciones@osmiss.org.ar**; luego, lead de empresa (B2B) en el CRM (a definir) |
 | Contactos → **Reclamo** | `formulario: "contacto"`, `tipo: "Reclamo"`, `area` | Caso / ticket de reclamo, derivado por Área |
 
 Ejemplo de un reclamo:
@@ -338,7 +340,7 @@ y las descripciones completas en `src/descripciones.js`. Los PDF se generan con 
 - **OSMISS-500**: el sitio actual y la App solo mencionan los planes 100, 150 y 200. Hoy el 500 usa el cuadro de beneficios y la descripción completa del 200.
 - **Logos de prestadores** destacados (IMAC, Centro Médico Monserrat, Sanatorio del Oeste, San Camilo, Anchorena, Bazterrica, FLENI, Favaloro, Arauz, GEDYT, Sanatorio Modelo Caseros): OSMISS los gestiona con cada prestador.
 - **URLs de Fipem y Funsalud**.
-- **Empresas**: beneficios para empresas y rangos de cantidad de empleados (textos de ejemplo); confirmar que el formulario de empresas entre en la integración con Zoho (la propuesta menciona afiliación, reclamos y consultas).
+- **Empresas**: el formulario "Quiero asociar a mi empresa" se envía por ahora por email a **contrataciones@osmiss.org.ar** (el backend debe reenviarlo a esa casilla); definir cómo ingresa luego al CRM (no está en el alcance de Zoho de la propuesta). Validar también los beneficios y los rangos de cantidad de empleados (textos de ejemplo).
 - **Textos médicos** de Urgencias y Autorizaciones (pasos, números públicos 107/911).
 - Datos de la Dirección ("Secretaria de Actas", tildes en apellidos).
 - Aviso "DNU 297/2020 — suspendido el ingreso a Casa Central" del sitio actual: confirmar que ya no corresponde (no se incluyó).
