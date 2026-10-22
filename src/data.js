@@ -145,6 +145,8 @@ export const DATA = {
       nombre: "OSMISS-500",
       bajada: "Cobertura superadora",
       destacado: true,
+      // Sin cuadro propio publicado: usa el cuadro de beneficios del OSMISS-200 (src/beneficios.js).
+      cuadroBeneficios: "osmiss-200",
       imagen: "",
       descripcion: "Nuestro plan más completo: máxima cobertura, habitación individual y atención en todo el país.",
       caracteristicas: [

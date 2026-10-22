@@ -26,7 +26,8 @@ function PlanDetalle({ id }) {
   const plan = DATA.planes.find((p) => p.id === id);
   if (!plan) return <NoEncontrado />;
   const cartillaUrl = DATA.config.appUrl; // la cartilla se consulta en la app de afiliados
-  const cuadro = BENEFICIOS[plan.id];
+  // "cuadroBeneficios" permite que un plan use el cuadro de otro (ej.: OSMISS-500 → OSMISS-200).
+  const cuadro = BENEFICIOS[plan.cuadroBeneficios || plan.id];
   return (
     <section className="seccion">
       <div className="contenedor">
