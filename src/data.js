@@ -551,7 +551,7 @@ export const DATA = {
         icono: "👨‍👩‍👧",
         para: "Afiliados y empleadores",
         email: "afiliaciones@osmiss.org.ar",
-        tramites: ["Alta de afiliados", "Baja", "Cambio de prestación", "Cambio de datos personales", "Control de aportes", "Credencial"],
+        tramites: ["Alta de afiliados", "Baja", "Cambio de prestación", "Cambio de datos personales", "Control de aportes", "Credencial", "Presentación o actualización del CUD (Certificado Único de Discapacidad)"],
       },
       {
         id: "gerencia-medica",
