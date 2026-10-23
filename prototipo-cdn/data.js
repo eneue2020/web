@@ -124,7 +124,7 @@ window.SITE_DATA = {
         "Todo lo del OSMISS-200",
         "Internación en habitación individual",
         "Cobertura en todo el país",
-        "Ortodoncia y Endodoncia",
+        "Ortodoncia (hasta 15 años) y Endodoncia",
         "Medicamentos al 80%",
         "Atención preferencial",
       ],
