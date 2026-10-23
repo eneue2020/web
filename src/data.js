@@ -200,7 +200,7 @@ export const DATA = {
       bajada: "Cobertura esencial",
       imagen: "",
       descripcion: "La cobertura básica para cuidar tu salud día a día, con acceso a médicos de cartilla y guardia las 24 horas.",
-      caracteristicas: ["Consultas médicas en cartilla", "Guardia 24 hs", "Medicamentos al 40%", "Análisis clínicos básicos"],
+      caracteristicas: ["Consultas médicas PMO", "Guardia 24 hs", "Medicamentos al 40%", "Análisis clínicos básicos"],
       beneficios: ["Credencial digital", "Atención telefónica"],
       infoAdicional: "Ideal para personas jóvenes que buscan una cobertura simple y accesible.",
     },
