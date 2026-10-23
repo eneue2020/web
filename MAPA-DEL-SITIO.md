@@ -198,7 +198,7 @@ Orden de bloques:
 
 ### 3.12 Urgencias `/urgencias`
 - Números del **Centro Coordinador de Urgencias (VITTAL)** en grande, "Tocá para llamar": **0810-333-8888** y **(011) 4000-8888** — 24 hs, 365 días.
-- Servicios: emergencias, urgencias, médico a domicilio, telemedicina.
+- Servicios: emergencias, urgencias y médico a domicilio. (No incluir telemedicina: OSMISS no ofrece este servicio por ahora.)
 - Qué tener a mano · Emergencias sin cargo (código rojo) · Números públicos 107 (SAME) y 911.
 
 ### 3.13 Quiero afiliarme `/afiliarme` y `/afiliarme/{plan}`

@@ -94,7 +94,6 @@ export const DATA = {
         { icono: "🚑", titulo: "Emergencias médicas", texto: "Situaciones con riesgo de vida que requieren atención inmediata." },
         { icono: "⚕️", titulo: "Urgencias médicas", texto: "Atención rápida ante un problema de salud que no puede esperar." },
         { icono: "🏠", titulo: "Médico a domicilio", texto: "Consulta médica en tu casa cuando no podés trasladarte." },
-        { icono: "💻", titulo: "Telemedicina", texto: "Consulta con un médico a distancia, desde tu celular o computadora." },
       ],
       // Números públicos nacionales, por si no se puede comunicar con el centro coordinador.
       publicos: [
@@ -242,9 +241,9 @@ export const DATA = {
         "Cobertura en todo el país",
         "Ortodoncia e implantes",
         "Medicamentos al 80%",
-        "Atención preferencial y telemedicina",
+        "Atención preferencial",
       ],
-      beneficios: ["Credencial digital", "Telemedicina 24 hs", "Asistencia al viajero", "Línea de atención exclusiva"],
+      beneficios: ["Credencial digital", "Asistencia al viajero", "Línea de atención exclusiva"],
       infoAdicional: "La opción superadora para quienes buscan la cobertura más amplia y sin preocupaciones.",
     },
   ],
@@ -418,7 +417,7 @@ export const DATA = {
             "Llamá al Centro Coordinador de Urgencias (VITTAL), que atiende las 24 hs, los 365 días del año:",
             "- 0810-333-8888",
             "- (011) 4000-8888",
-            "Cubre emergencias y urgencias médicas, médico a domicilio y telemedicina. Tené a mano tu credencial y tu DNI.",
+            "Cubre emergencias y urgencias médicas y médico a domicilio. Tené a mano tu credencial y tu DNI.",
           ],
           cta: { texto: "Ver urgencias", destino: "urgencias" },
         },
