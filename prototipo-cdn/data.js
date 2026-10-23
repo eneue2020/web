@@ -124,7 +124,7 @@ window.SITE_DATA = {
         "Todo lo del OSMISS-200",
         "Internación en habitación individual",
         "Cobertura en todo el país",
-        "Ortodoncia e implantes",
+        "Ortodoncia y Endodoncia",
         "Medicamentos al 80%",
         "Atención preferencial",
       ],
