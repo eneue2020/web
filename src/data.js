@@ -353,7 +353,8 @@ export const DATA = {
   // Preguntas frecuentes organizadas por categorías.
   // Datos tomados de https://www.osmiss.org.ar/preguntas.html, con redacción orientada a captar afiliados.
   // "r" puede ser un texto o una lista de párrafos; los párrafos que empiezan con "- " se muestran como lista.
-  // "cta" (opcional) agrega un botón al final de la respuesta: { texto, destino }.
+  // "cta" (opcional) agrega uno o más botones al final de la respuesta: { texto, destino } para una
+  // página del sitio, { texto, url } para un link externo, o una lista de ellos.
   faq: [
     {
       categoria: "Sumate a OSMISS",
@@ -449,6 +450,26 @@ export const DATA = {
           p: "¿Qué es una autorización y cuándo la necesito?",
           r: "Es un trámite previo que se realiza cuando tu médico te indica una práctica, un estudio o una receta que lo requiere. Podés pedirla online desde la App OSMISS, en “Pedidos de autorización”, enviando tu orden médica.",
           cta: { texto: "Cómo pedir una autorización", destino: "autorizaciones" },
+        },
+        {
+          p: "¿Qué atenciones hay por discapacidad?",
+          r: [
+            "OSMISS cubre las prestaciones del Nomenclador de Prestaciones Básicas para personas con Discapacidad (Ley 24.901), al 100% según el PMO y sin coseguro presentando el Certificado Único de Discapacidad (CUD) vigente. Entre otras:",
+            "- Rehabilitación ambulatoria",
+            "- Maestra de apoyo escolar y apoyo escolar en equipo",
+            "- Centro de día y Centro Educativo Terapéutico",
+            "- Hogar (también con centro de día o con centro educativo terapéutico)",
+            "- Transporte",
+            "Cada caso lo evalúa el Equipo Interdisciplinario de Discapacidad junto con el prestador, para definir el plan que mejor se ajuste a la persona y a su familia.",
+            "¿Cómo se solicita? Enviá la solicitud completa, con la documentación del afiliado y del prestador en archivos PDF o JPG firmados, a osmiss.sistemaintegracion@gmail.com, con el asunto: nombre del afiliado / DNI / prestación / prestador. En el manual tenés el detalle de la documentación.",
+            "- Se autoriza a partir de la entrega de la documentación (no se autorizan períodos anteriores).",
+            "- El prestador debe estar inscripto en el Registro Nacional de Prestadores (SNR).",
+            "- Los pagos se hacen a nombre del prestador; no hay reintegros a afiliados.",
+          ],
+          cta: [
+            { texto: "Ver el manual de prestaciones", url: "https://drive.google.com/file/d/1dRRWCBkqTVoTLayqfxYSSJIga4tKa7F7/view" },
+            { texto: "Hacer una consulta", destino: "contactos/gerencia-medica" },
+          ],
         },
         {
           p: "¿Dónde queda la sede de OSMISS?",

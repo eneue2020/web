@@ -158,8 +158,8 @@ Orden de bloques:
 4. **Instituciones vinculadas** — logos: SSSalud, Círculo de Ministros, Mutualidad del Círculo (con link), Fipem y Funsalud (sin link por ahora).
 
 ### 3.8 FAQ `/faq`
-- Pestañas por categoría: **Sumate a OSMISS** · **Atención y cobertura** · **Medicamentos** (14 preguntas del sitio actual, reescritas con foco en captar afiliados).
-- Acordeones; respuestas con párrafos, listas y botón de acción (ej.: "Quiero afiliarme", "Ver urgencias", "Cómo pedir una autorización").
+- Pestañas por categoría: **Sumate a OSMISS** · **Atención y cobertura** · **Medicamentos** (preguntas del sitio actual reescritas con foco en captar afiliados, más urgencias y discapacidad).
+- Acordeones; respuestas con párrafos, listas y uno o más botones de acción, internos o externos (ej.: "Quiero afiliarme", "Ver urgencias", "Ver el manual de prestaciones" de discapacidad en Drive).
 - Banda final: "¿Te quedó alguna duda?" → Quiero afiliarme / Hacer una consulta.
 
 ### 3.9 Trámites `/tramites`

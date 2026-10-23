@@ -22,7 +22,16 @@ function Respuesta({ r, cta }) {
           ? <ul key={i} className="lista-check">{b.map((li) => <li key={li}>{li}</li>)}</ul>
           : <p key={i}>{b}</p>
       )}
-      {cta && <a href={"#" + cta.destino} className="btn btn-primario">{cta.texto}</a>}
+      {cta && (
+        <div className="acciones" style={{ marginTop: 6 }}>
+          {/* "cta" puede ser un botón o una lista; con "url" abre un link externo, con "destino" una página del sitio */}
+          {[].concat(cta).map((c, i) =>
+            c.url
+              ? <a key={c.texto} href={c.url} target="_blank" rel="noopener" className={"btn " + (i ? "btn-secundario" : "btn-primario")}>{c.texto}</a>
+              : <a key={c.texto} href={"#" + c.destino} className={"btn " + (i ? "btn-secundario" : "btn-primario")}>{c.texto}</a>
+          )}
+        </div>
+      )}
     </div>
   );
 }
