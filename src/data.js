@@ -252,7 +252,7 @@ export const DATA = {
     { icono: "🩺", titulo: "Amplia cartilla", texto: "Profesionales y centros de atención en todo el país." },
     { icono: "⏱️", titulo: "Atención 24 hs", texto: "Guardia y asistencia médica todos los días del año." },
     { icono: "📱", titulo: "Gestión digital", texto: "Credencial digital y trámites online, sin filas." },
-    { icono: "🤝", titulo: "Cercanía", texto: "Un equipo que te acompaña y responde tus consultas." },
+    { icono: "🤝", titulo: "Atención personalizada", texto: "Para todos nuestros afiliados, en todos los planes: un equipo que te acompaña y responde tus consultas." },
   ],
 
   // Prestadores destacados para el carrusel horizontal del Home.
