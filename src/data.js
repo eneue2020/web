@@ -538,7 +538,7 @@ export const DATA = {
         icono: "🩺",
         para: "Afiliados y efectores",
         email: "gerencia.medica@osmiss.org.ar",
-        tramites: ["Autorizar una orden o una receta", "Consultar la cartilla", "Consultar dónde atenderte", "Consultar coseguros"],
+        tramites: ["Autorizar una orden o una receta", "Consultar la cartilla", "Consultar dónde atenderte", "Consultar coseguros", "Consultas por discapacidad"],
       },
       {
         id: "control-aportes",
