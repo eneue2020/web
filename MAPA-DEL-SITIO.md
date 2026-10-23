@@ -163,7 +163,8 @@ Orden de bloques:
 - Banda final: "¿Te quedó alguna duda?" → Quiero afiliarme / Hacer una consulta.
 
 ### 3.9 Trámites `/tramites`
-1. **App OSMISS (osmiss-bymovi)** — funciones (credencial digital, autorizaciones, cartilla, trámites, emergencias, notificaciones), botones "Ingresar a la app" y "Descargar en Google Play".
+1. **App OSMISS (osmiss-bymovi)** — funciones (credencial digital, autorizaciones, cartilla, trámites, emergencias, notificaciones), botones "Ingresar a la app", **Google Play (Android)** y **App Store (iPhone)**.
+1. **¿Cómo empiezo a usar la app?** — pasos para la versión web (sin instalar) y para la app del celular (registro una sola vez, usuario = DNI), con los botones de cada versión y link al instructivo de uso.
 2. **¿Qué trámite necesitás hacer?** — una tarjeta por sector:
    - **Afiliaciones** (afiliados y empleadores)
    - **Gerencia Médica** (afiliados y efectores) — incluye botón "Pedir autorización"
@@ -219,7 +220,9 @@ Orden de bloques:
 | Cartilla | https://osmiss-app.bymovi.com/cartilla | "Ver cartilla", Cartilla embebida |
 | Pedidos de autorización | https://osmiss-app.bymovi.com/pedidos-autorizacion | Autorizaciones, accesos rápidos, Trámites |
 | Credencial digital | https://osmiss-app.bymovi.com/credencial-digital | Accesos rápidos |
-| App en Google Play | https://play.google.com/store/apps/details?id=com.webexport.osmiss | Trámites |
+| App en Google Play (Android) | https://play.google.com/store/apps/details?id=com.webexport.osmiss | Trámites, Autorizaciones, footer |
+| App en App Store (iPhone) | https://apps.apple.com/ar/app/osmiss/id6778929323 | Trámites, Autorizaciones, footer |
+| Nota "Nueva app OSMISS-bymovi" | https://osmiss.org.ar/news2/2026/05/22/nueva-app-osmiss-bymovi/ | Trámites ("Más información") |
 | Paso a paso de registro (PDF en Drive) | https://drive.google.com/file/d/1W7dtKNdsi2H_fvHa0HoBH7wYHoMxYGVg/view | Autorizaciones |
 | SSSalud | https://www.argentina.gob.ar/sssalud | Institucional, footer |
 | Círculo de Ministros | http://circulodeministros.com.ar/ | Institucional, footer |
@@ -344,7 +347,6 @@ y las descripciones completas en `src/descripciones.js`. Los PDF se generan con 
 - **Textos médicos** de Urgencias y Autorizaciones (pasos, números públicos 107/911).
 - Datos de la Dirección ("Secretaria de Actas", tildes en apellidos).
 - Aviso "DNU 297/2020 — suspendido el ingreso a Casa Central" del sitio actual: confirmar que ya no corresponde (no se incluyó).
-- App OSMISS en App Store (hoy solo hay link a Google Play).
 
 **Integraciones**
 - **Zoho CRM**: endpoint de la API para los formularios.

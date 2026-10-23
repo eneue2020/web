@@ -335,6 +335,18 @@ td.col-destacada { background: #fff8e1; font-weight: 700; }
   .modal-acciones .btn { padding: 10px 14px; font-size: 0.92rem; }
 }
 
+/* ---------- Botones de tiendas y pasos de la app ---------- */
+.btn-tienda { display: inline-flex; align-items: center; gap: 8px; }
+.btn-tienda small { font-weight: 600; opacity: 0.75; font-size: 0.8rem; }
+.app-pasos { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+@media (max-width: 800px) { .app-pasos { grid-template-columns: 1fr; } }
+.app-pasos-detalle { color: var(--texto-suave); margin: 0 0 12px; }
+.app-pasos-lista { margin: 0; padding-left: 22px; display: grid; gap: 8px; }
+.app-pasos-lista li { padding-left: 4px; }
+.footer-app { margin-top: 14px; }
+.footer-app strong { display: block; margin-bottom: 4px; }
+.footer-app a { text-decoration: underline; text-underline-offset: 3px; }
+
 /* ---------- Trabajá con nosotros ---------- */
 .footer-empleo {
   display: inline-block; margin-top: 10px; padding: 10px 14px; border-radius: 10px;

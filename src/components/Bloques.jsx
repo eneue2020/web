@@ -30,6 +30,21 @@ export function CarruselLogos() {
   );
 }
 
+// Botones para descargar la App OSMISS en Google Play (Android) y App Store (iPhone).
+export function BotonesTiendas({ className = "btn" }) {
+  const app = DATA.tramites.app;
+  return (
+    <>
+      <a href={app.androidUrl} target="_blank" rel="noopener" className={className + " btn-tienda"}>
+        Google Play <small>Android</small>
+      </a>
+      <a href={app.iosUrl} target="_blank" rel="noopener" className={className + " btn-tienda"}>
+        App Store <small>iPhone</small>
+      </a>
+    </>
+  );
+}
+
 // Accesos rápidos del Home: lo que más buscan los afiliados, a un toque.
 export function AccesosRapidos() {
   const CFG = DATA.config;

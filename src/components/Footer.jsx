@@ -41,6 +41,12 @@ export default function Footer() {
             🕘 {CFG.horario}
           </p>
           <a href="#afiliarme" className="btn btn-destacado">Quiero afiliarme</a>
+          <p className="footer-app">
+            <strong>📱 Descargá la App OSMISS</strong>
+            <a href={DATA.tramites.app.androidUrl} target="_blank" rel="noopener">Google Play</a>
+            {" · "}
+            <a href={DATA.tramites.app.iosUrl} target="_blank" rel="noopener">App Store</a>
+          </p>
         </div>
       </div>
       <div className="contenedor footer-instituciones">

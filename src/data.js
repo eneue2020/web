@@ -489,6 +489,31 @@ export const DATA = {
       aclaracion: "Disponible para afiliados activos a los planes OSMISS-100, OSMISS-150 y OSMISS-200.",
       webUrl: "https://osmiss-app.bymovi.com/",
       androidUrl: "https://play.google.com/store/apps/details?id=com.webexport.osmiss",
+      iosUrl: "https://apps.apple.com/ar/app/osmiss/id6778929323",
+      instructivoUrl: "https://drive.google.com/file/d/1W7dtKNdsi2H_fvHa0HoBH7wYHoMxYGVg/view",
+      // Pasos para empezar a usar la app (fuente: nota "Nueva app OSMISS-bymovi").
+      pasos: {
+        web: {
+          titulo: "Desde la web",
+          detalle: "Desde tu PC, celular o tablet, sin instalar nada.",
+          pasos: [
+            "Ingresá a osmiss-app.bymovi.com desde tu navegador.",
+            "Registrate. Se hace una sola vez (salteá este paso si ya lo hiciste).",
+            "Iniciá sesión con tu número de DNI como usuario y la contraseña que creaste.",
+            "¡Listo! Ya podés empezar a usarla.",
+          ],
+        },
+        movil: {
+          titulo: "Desde la app en tu celular",
+          detalle: "Para Android y iPhone. Te sugerimos permitir la ubicación para encontrar prestadores cercanos.",
+          pasos: [
+            "Buscá “OSMISS” en Google Play o en la App Store (verificá que sea la app oficial) o usá los botones de esta página.",
+            "Descargá e instalá la app. Leé los avisos y habilitá los permisos que te pide.",
+            "Registrate. Se hace una sola vez (salteá este paso si ya lo hiciste desde la web).",
+            "Iniciá sesión con tu número de DNI como usuario y la contraseña que creaste.",
+          ],
+        },
+      },
       masInfoUrl: "https://osmiss.org.ar/news2/2026/05/22/nueva-app-osmiss-bymovi/",
       funciones: [
         { icono: "💳", texto: "Credencial digital tuya y de tu grupo familiar" },

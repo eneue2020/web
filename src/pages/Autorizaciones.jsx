@@ -1,5 +1,6 @@
 import { DATA } from "../data.js";
 import { Titulo } from "../components/Layout.jsx";
+import { BotonesTiendas } from "../components/Bloques.jsx";
 
 const PASOS = [
   { titulo: "Ingresá a la App OSMISS", texto: "Entrá con tu usuario. Si es tu primera vez, registrate (se hace una sola vez)." },
@@ -63,6 +64,10 @@ export default function Autorizaciones() {
                 comunicate con el sector Afiliaciones para regularizar tu situación.
               </p>
               <a href="#contactos/afiliaciones" className="leer-mas">Contactar a Afiliaciones →</a>
+              <p style={{ margin: "14px 0 8px" }}><strong>Descargá la app en tu celular:</strong></p>
+              <div className="acciones" style={{ marginTop: 0 }}>
+                <BotonesTiendas className="btn btn-primario" />
+              </div>
             </div>
             <div className="tarjeta">
               <h3>¿Tenés dudas?</h3>

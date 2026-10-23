@@ -1,6 +1,6 @@
 import { DATA } from "../data.js";
 import { Pagina } from "../components/Layout.jsx";
-import { CtaAfiliarme } from "../components/Bloques.jsx";
+import { CtaAfiliarme, BotonesTiendas } from "../components/Bloques.jsx";
 
 // Trámites a distancia: App OSMISS y sectores de Casa Central.
 export default function Tramites() {
@@ -21,7 +21,7 @@ export default function Tramites() {
             </ul>
             <div className="acciones">
               <a href={app.webUrl} target="_blank" rel="noopener" className="btn btn-destacado">Ingresar a la app</a>
-              <a href={app.androidUrl} target="_blank" rel="noopener" className="btn">Descargar en Google Play</a>
+              <BotonesTiendas />
             </div>
             <p className="app-aclaracion">
               {app.aclaracion}{" "}
@@ -45,6 +45,35 @@ export default function Tramites() {
           </div>
         </div>
       </Pagina>
+
+      <section className="seccion" style={{ paddingTop: 0 }}>
+        <div className="contenedor">
+          <div className="seccion-titulo">
+            <h2>¿Cómo empiezo a usar la app?</h2>
+            <p>Elegí cómo querés usarla. El registro se hace una sola vez y sirve para las dos versiones.</p>
+          </div>
+          <div className="app-pasos">
+            {[app.pasos.web, app.pasos.movil].map((v, n) => (
+              <div className="tarjeta" key={v.titulo}>
+                <h3>{n === 0 ? "💻" : "📱"} {v.titulo}</h3>
+                <p className="app-pasos-detalle">{v.detalle}</p>
+                <ol className="app-pasos-lista">
+                  {v.pasos.map((p) => <li key={p}>{p}</li>)}
+                </ol>
+                <div className="acciones" style={{ marginTop: 16 }}>
+                  {n === 0
+                    ? <a href={app.webUrl} target="_blank" rel="noopener" className="btn btn-primario">Ingresar desde la web</a>
+                    : <BotonesTiendas className="btn btn-primario" />}
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="cartilla-pie">
+            ¿Necesitás ayuda? <a href={app.instructivoUrl} target="_blank" rel="noopener"><strong>Descargá el instructivo de uso</strong></a>.
+            {" "}La app requiere ser afiliado activo; si tenés dudas sobre tu afiliación, <a href="#contactos/afiliaciones">consultá a Afiliaciones</a>.
+          </p>
+        </div>
+      </section>
 
       <section className="seccion seccion-alterna">
         <div className="contenedor">
